@@ -1,0 +1,22 @@
+.overlay-icon {
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  z-index: -1;
+  transform: rotate(360deg);
+  animation: overlay 10s linear infinite;
+}
+.overlay-icon img {
+  height: 100%;
+  width: 100%;
+}
+
+/* animation for overlay icons */
+@keyframes overlay {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}

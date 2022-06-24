@@ -1,0 +1,38 @@
+/* for banner styles */
+.hero-banner {
+  background: url(../../assets/hero-img/banner.jpg);
+  height: 100vh;
+  width: 100%;
+  z-index: 1;
+}
+.hero-banner-content-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: var(--primary-text);
+}
+.hero-banner-content-left h6 {
+  font-weight: 900;
+  font-style: italic;
+}
+.hero-banner-content-left h1 {
+  font-size: 3rem;
+  font-weight: bolder;
+}
+
+/* media query */
+@media screen and (max-width: 1199px) {
+  .hero-banner-content-left h1 {
+    font-size: 2.4rem;
+  }
+}
+@media screen and (max-width: 991px) {
+  .hero-banner {
+    height: auto;
+  }
+  .hero-banner-content-left h1 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 990px) {
+}

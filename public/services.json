@@ -1,0 +1,26 @@
+[
+    {
+        "name":"Diagnostics",
+        "description":"Phasellus venenatis porta rhoncus. Integer et viverra felis."
+    },
+    {
+        "name":"Treatment",
+        "description":"Phasellus venenatis porta rhoncus. Integer et viverra felis."
+    },
+    {
+        "name":"Surgery",
+        "description":"Phasellus venenatis porta rhoncus. Integer et viverra felis."
+    },
+    {
+        "name":"Emergency",
+        "description":"Phasellus venenatis porta rhoncus. Integer et viverra felis."
+    },
+    {
+        "name":"Vaccine",
+        "description":"Phasellus venenatis porta rhoncus. Integer et viverra felis."
+    },
+    {
+        "name":"Qualified Doctors",
+        "description":"Phasellus venenatis porta rhoncus. Integer et viverra felis."
+    }
+]

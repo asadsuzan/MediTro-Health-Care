@@ -1,0 +1,21 @@
+.MyButtonLg {
+  border: none;
+  position: relative;
+  text-transform: uppercase;
+  color: var(--white-text);
+  font-size: 14px;
+  font-weight: 600;
+}
+.MyButtonLg span {
+  background-color: whitesmoke;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  display: block;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5px;
+  color: var(--hover-text);
+}

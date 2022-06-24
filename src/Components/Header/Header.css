@@ -1,0 +1,21 @@
+.header-divider {
+  background-color: transparent;
+  height: 100px;
+  padding: 5rem 0 !important;
+}
+.primary-header {
+  width: 100%;
+  height: 100px;
+}
+.primary-header a {
+  color: var(--primary-text);
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.3s linear;
+}
+.primary-header a:hover {
+  color: var(--hover-text);
+}
+.active {
+  color: var(--hover-text) !important;
+}
