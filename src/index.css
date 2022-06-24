@@ -16,10 +16,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
 /* my color plant */
 :root {
   --primary-text: #1f2278;
   --white-text: white;
   --hover-text: #f17732;
+  --title-text: #f17732;
+  --pera-text: #444444;
   --button-lg-bg: #f17732;
 }

@@ -6,17 +6,25 @@ import { NavLink } from "react-router-dom";
 import logo from "../../assets/logo/logo.png";
 import { MyButtonLg } from "../MyButtons/MyButtons";
 import "./Header.css";
+import { useEffect } from "react";
+import { useState } from "react";
 
 function Header() {
-  const { pathname } = useLocation();
-  console.log(pathname);
+  const [sticky, setSticky] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      window.scrollY > 100 ? setSticky(true) : setSticky(false);
+    });
+  }, []);
+
   return (
     <>
       <div className="header-divider"></div>
       <Navbar
         expand="lg"
         className={`primary-header bg-light fixed-top ${
-          pathname === "/" && "bg-transparent"
+          sticky && "shadow-lg bg-light"
         }`}
       >
         <Container>

@@ -1,0 +1,35 @@
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+.features-item {
+  border: 1px solid #b2f0fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: 100%;
+  background-color: #ecfcff;
+}
+.features-item p {
+  color: var(--primary-text) !important;
+  font-weight: 600 !important;
+  flex: 2;
+  overflow-wrap: break-word !important;
+}
+.features-item img {
+  width: 40px;
+  height: 40px;
+  display: block;
+  flex: 1;
+}
+
+@media screen and (max-width: 480px) {
+  .features {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  /* .features-item {
+    justify-content: center;
+  } */
+}
