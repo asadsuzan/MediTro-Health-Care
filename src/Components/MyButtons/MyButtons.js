@@ -4,10 +4,7 @@ import "./MyButtons.css";
 
 const MyButtonLg = ({ children, style, className }) => {
   return (
-    <button
-      className={`MyButtonLg shadow-lg text-light ${className}`}
-      style={style}
-    >
+    <button className={`MyButtonLg shadow-lg  ${className}`} style={style}>
       {children}
       <span>
         {" "}

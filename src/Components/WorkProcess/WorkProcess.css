@@ -1,0 +1,67 @@
+.WorkProcess-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  transform: scale(0.9);
+}
+.WorkProcess-card {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 20px;
+  border-radius: 20px;
+  transition: all 0.4s linear;
+}
+.WorkProcess-card h1 {
+  /* color: var(--title-text); */
+  color: transparent;
+  font-weight: 900;
+  font-size: 5rem;
+  text-shadow: 0 10px 0 #ffe3d3;
+  -webkit-text-stroke: 2px #f17732;
+}
+.WorkProcess-card h5 {
+  color: var(--title-text);
+  font-weight: 800;
+  font-size: 1.4rem;
+}
+.WorkProcess-card p {
+  color: var(--pera-text);
+  font-size: 14px;
+  line-height: 2;
+}
+.WorkProcess-card.active {
+  background-color: var(--hover-text) !important;
+  transform: translateY(-20px);
+}
+.WorkProcess-card.active h5 {
+  color: white !important;
+}
+.WorkProcess-card.active p {
+  color: white !important;
+}
+.WorkProcess-card.active h1 {
+  text-shadow: 0 10px 0 #f38f5e;
+  -webkit-text-stroke: 2px #fff;
+}
+
+/* media query */
+@media screen and (max-width: 991px) {
+  .WorkProcess-cards {
+    grid-template-columns: repeat(2, 1fr);
+    transform: scale(1);
+  }
+  .WorkProcess-card.active {
+    background-color: var(--hover-text) !important;
+    transform: translateY(0);
+  }
+}
+@media screen and (max-width: 767px) {
+  .WorkProcess-cards {
+    grid-template-columns: repeat(1, 1fr);
+    transform: scale(0.9);
+  }
+}

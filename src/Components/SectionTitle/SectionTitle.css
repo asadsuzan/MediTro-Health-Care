@@ -12,8 +12,13 @@
   font-size: 2.3rem;
 }
 /* media query */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 991px) {
+  .section-title h2 {
+    font-size: 1.6rem;
+  }
+}
+/* @media screen and (max-width: 480px) {
   .section-title h2 {
     font-size: 2rem;
   }
-}
+} */

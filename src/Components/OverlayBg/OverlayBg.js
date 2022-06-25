@@ -46,5 +46,35 @@ const OverlayBg5 = ({ style }) => {
     </div>
   );
 };
+const OverlayBg6 = ({ style }) => {
+  return (
+    <div className="overlay-icon" style={style}>
+      <img src={overlayIcon5} alt="" />
+    </div>
+  );
+};
+const OverlayBg7 = ({ style }) => {
+  return (
+    <div className="overlay-icon" style={style}>
+      <img src={overlayIcon6} alt="" />
+    </div>
+  );
+};
+const OverlayBg8 = ({ style }) => {
+  return (
+    <div className="overlay-icon" style={style}>
+      <img src={overlayIcon7} alt="" />
+    </div>
+  );
+};
 
-export { OverlayBg1, OverlayBg2, OverlayBg3, OverlayBg4, OverlayBg5 };
+export {
+  OverlayBg1,
+  OverlayBg2,
+  OverlayBg3,
+  OverlayBg4,
+  OverlayBg5,
+  OverlayBg6,
+  OverlayBg7,
+  OverlayBg8,
+};
