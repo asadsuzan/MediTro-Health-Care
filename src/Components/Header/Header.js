@@ -24,7 +24,7 @@ function Header() {
       <Navbar
         expand="lg"
         className={`primary-header bg-light fixed-top ${
-          sticky && "shadow-lg bg-light"
+          sticky && "shadow-sm bg-light"
         }`}
       >
         <Container>

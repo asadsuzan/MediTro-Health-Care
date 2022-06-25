@@ -2,9 +2,13 @@ import React from "react";
 import { AiFillCaretRight } from "react-icons/ai";
 import "./MyButtons.css";
 
-const MyButtonLg = ({ children, style, className }) => {
+const MyButtonLg = ({ children, style, className, action }) => {
   return (
-    <button className={`MyButtonLg shadow-lg  ${className}`} style={style}>
+    <button
+      onClick={action}
+      className={`MyButtonLg shadow-lg  ${className}`}
+      style={style}
+    >
       {children}
       <span>
         {" "}

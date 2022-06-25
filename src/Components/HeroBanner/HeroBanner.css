@@ -3,7 +3,7 @@
   background: url(../../assets/hero-img/banner.jpg);
   height: 100vh;
   width: 100%;
-  z-index: 1;
+  z-index: 999999;
 }
 .hero-banner-content-left {
   display: flex;
