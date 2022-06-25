@@ -1,26 +1,33 @@
 [
     {
-        "name":"Diagnostics",
-        "description":"Phasellus venenatis porta rhoncus. Integer et viverra felis."
+        "name":"Diagnodfdfdgstics",
+        "description":"Phasellus venenatis porta rhoncus. Integer et viverra felis.",
+        "thumb":"https://i.ibb.co/MZC8Ym9/s7.png"
+        
     },
     {
         "name":"Treatment",
-        "description":"Phasellus venenatis porta rhoncus. Integer et viverra felis."
+        "description":"Phasellus venenatis porta rhoncus. Integer et viverra felis.",
+        "thumb":"https://i.ibb.co/x8bL0BS/s1.png"
     },
     {
         "name":"Surgery",
-        "description":"Phasellus venenatis porta rhoncus. Integer et viverra felis."
+        "description":"Phasellus venenatis porta rhoncus. Integer et viverra felis.",
+        "thumb":"https://i.ibb.co/vJG5CRq/s3.png"
     },
     {
         "name":"Emergency",
-        "description":"Phasellus venenatis porta rhoncus. Integer et viverra felis."
+        "description":"Phasellus venenatis porta rhoncus. Integer et viverra felis.",
+        "thumb":"https://i.ibb.co/mXtLvg2/s4.png"
     },
     {
         "name":"Vaccine",
-        "description":"Phasellus venenatis porta rhoncus. Integer et viverra felis."
+        "description":"Phasellus venenatis porta rhoncus. Integer et viverra felis.",
+        "thumb":"https://i.ibb.co/Jk11RjT/s5.png"
     },
     {
         "name":"Qualified Doctors",
-        "description":"Phasellus venenatis porta rhoncus. Integer et viverra felis."
+        "description":"Phasellus venenatis porta rhoncus. Integer et viverra felis.",
+        "thumb":"https://i.ibb.co/RyfLMdN/s6.png"
     }
 ]

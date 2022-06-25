@@ -1,0 +1,22 @@
+.services-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+}
+.service-item {
+  padding: 2rem;
+  background: url(../../assets/hero-img/banner.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 350px;
+}
+.service-item figure {
+  border: 2px solid rgba(86, 90, 207, 0.1);
+  display: inline-block;
+  padding: 1rem;
+}
+.service-item img {
+  width: 60px;
+  height: 60px;
+}
