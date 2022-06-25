@@ -4,7 +4,7 @@ import { MyButtonLg } from "../MyButtons/MyButtons";
 import "./ServiceCard.css";
 
 const ServiceCard = () => {
-  const [services, setServices] = UseServices();
+  const [services] = UseServices();
   return (
     <div className="all-services">
       <div className="container">
@@ -18,9 +18,7 @@ const ServiceCard = () => {
                 </figure>
                 <div>
                   <h5>{name}</h5>
-                  <p>
-                    Phasellus venenatis porta rhoncus. Integer et viverra felis.
-                  </p>
+                  <p>{description}</p>
                 </div>
                 <MyButtonLg
                   className={"book-now-btn"}

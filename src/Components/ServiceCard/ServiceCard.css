@@ -20,3 +20,11 @@
   width: 60px;
   height: 60px;
 }
+.service-item h5 {
+  color: var(--primary-text);
+  font-weight: 900;
+}
+.service-item p {
+  color: var(--pera-text);
+  font-weight: 500;
+}

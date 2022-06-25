@@ -16,7 +16,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
+section {
+  margin-bottom: 10rem;
+}
+@media screen and (max-width: 767px) {
+  section {
+    margin-bottom: 5rem;
+  }
+}
 /* my color plant */
 :root {
   --primary-text: #1f2278;
