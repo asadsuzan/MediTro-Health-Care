@@ -1,5 +1,5 @@
 import Container from "react-bootstrap/Container";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { NavLink } from "react-router-dom";
@@ -11,6 +11,7 @@ import { useState } from "react";
 
 function Header() {
   const [sticky, setSticky] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -63,6 +64,7 @@ function Header() {
               </NavLink>
               {
                 <MyButtonLg
+                  action={() => navigate("/login")}
                   className={"header-btn"}
                   style={{
                     width: "150px",

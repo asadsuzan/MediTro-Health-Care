@@ -1,0 +1,22 @@
+.AuthenticationForm {
+  background: red;
+  width: 450px;
+  margin: 0 auto;
+  height: 600px;
+  border-radius: 30px;
+  padding: 1rem;
+}
+.AuthenticationForm-logo {
+  width: 200px;
+  margin: 0 auto;
+}
+.AuthenticationForm .input-group {
+  margin: 1rem 0;
+}
+.AuthenticationForm .input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #b2f0fb;
+  outline-color: #82ecff;
+  border-radius: 10px 10px !important;
+}
