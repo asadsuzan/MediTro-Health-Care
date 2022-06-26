@@ -6,6 +6,8 @@ body {
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif !important;
   overflow-x: hidden !important;
+  scroll-behavior: smooth;
+  background: #f7f7ff !important;
 }
 img {
   aspect-ratio: attr(width) / attr(height);

@@ -1,0 +1,41 @@
+.footer {
+  background: url(../../assets/hero-img/banner.jpg);
+
+  min-height: 500px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 100px 100px 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.f-title {
+  color: var(--primary-text);
+  font-size: 20px;
+  font-weight: 600;
+  margin: 1rem 0;
+  text-transform: capitalize;
+}
+.f-logo {
+  width: 200px !important;
+}
+.f-des {
+  color: var(--pera-text);
+  font-size: 15px;
+  line-height: 2;
+}
+.social-links {
+  margin: 1rem 0;
+  gap: 20px;
+}
+.social-links img {
+  width: 30px;
+}
+.f-links li {
+  color: var(--pera-text);
+  margin: 1rem 0;
+  font-weight: 500;
+  font-weight: 500;
+}
