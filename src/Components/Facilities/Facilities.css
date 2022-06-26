@@ -1,0 +1,34 @@
+.facilities {
+  background: url(../../assets//hero-img/banner.jpg);
+  background-size: cover;
+}
+.facility-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
+}
+.facility {
+  width: 100%;
+  background-color: whitesmoke;
+  border-radius: 10px;
+}
+.facility img {
+  border-radius: 10px 10px 0 0;
+}
+.facility p {
+  color: var(--pera-text);
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+/* media query */
+@media screen and (max-width: 767px) {
+  .facility-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 480px) {
+  .facility-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

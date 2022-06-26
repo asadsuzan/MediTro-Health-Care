@@ -1,0 +1,26 @@
+[
+    {
+        "facilities":"Operation",
+        "thumb":"./images/features/f1.jpg"
+    },
+    {
+        "facilities":"Medical",
+        "thumb":"./images/features/f2.jpg"
+    },
+    {
+        "facilities":"Patient Ward",
+        "thumb":"./images/features/f3.jpg"
+    },
+    {
+        "facilities":"Test Room",
+        "thumb":"./images/features/f4.jpg"
+    },
+    {
+        "facilities":"ICU",
+        "thumb":"./images/features/f5.jpg"
+    },
+    {
+        "facilities":"Laboratory",
+        "thumb":"./images/features/f6.jpg"
+    }
+]

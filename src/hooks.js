@@ -20,4 +20,16 @@ const UseDoctors = () => {
   return [doctors, setDoctors];
 };
 
-export { UseServices, UseDoctors };
+const UseFacilities = () => {
+  const [facilities, setFacilities] = useState([]);
+
+  useEffect(() => {
+    fetch("facilities.json")
+      .then((res) => res.json())
+      .then((data) => setFacilities(data));
+  }, []);
+
+  return [facilities, setFacilities];
+};
+
+export { UseServices, UseDoctors, UseFacilities };
