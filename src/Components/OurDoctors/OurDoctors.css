@@ -23,7 +23,7 @@
 }
 .doctor p {
   font-size: 13px;
-  font-weight: bold;
+  font-weight: 500;
   color: var(--pera-text);
 }
 .doctor img {

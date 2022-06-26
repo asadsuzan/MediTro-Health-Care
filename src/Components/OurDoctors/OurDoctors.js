@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { UseDoctors } from "../../hooks";
 import { AiOutlineTags } from "react-icons/ai";
+import { BiTime } from "react-icons/bi";
+import { FaMoneyBillAlt } from "react-icons/fa";
 import "./OurDoctors.css";
 import { MyButtonLg } from "../MyButtons/MyButtons";
 import SectionTitle from "../SectionTitle/SectionTitle";
@@ -79,8 +81,14 @@ const OurDoctors = () => {
                     <p>{degree}</p>
                   </div>
                   <div>
-                    <p>{period}</p>
-                    <p>{fees}</p>
+                    <p>
+                      <BiTime />
+                      {period}
+                    </p>
+                    <p>
+                      <FaMoneyBillAlt />
+                      {fees}
+                    </p>
                   </div>
                 </div>
               </div>
