@@ -15,10 +15,12 @@ import { Autoplay, FreeMode } from "swiper";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import { UseServices } from "../../hooks";
 import { MyButtonLg } from "../MyButtons/MyButtons";
+import { useNavigate } from "react-router-dom";
 import "./ServiceSlide.css";
 
 const ServiceSlide = () => {
   const [services] = UseServices();
+  const navigate = useNavigate();
   return (
     <div className="service-slide">
       <div className="container service-slide-inner">
@@ -32,6 +34,7 @@ const ServiceSlide = () => {
           <div className="text-end">
             {" "}
             <MyButtonLg
+              action={() => navigate("service")}
               className={"view-all-btn"}
               style={{
                 width: "150px",

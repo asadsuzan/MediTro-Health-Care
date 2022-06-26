@@ -3,6 +3,7 @@ import Header from "../Header/Header";
 import { MyButtonLg } from "../MyButtons/MyButtons";
 import heroThumb from "../../assets/hero-img/hero-min.png";
 import "./HeroBanner.css";
+import { useNavigate } from "react-router-dom";
 import {
   OverlayBg1,
   OverlayBg3,
@@ -10,6 +11,8 @@ import {
   OverlayBg5,
 } from "../OverlayBg/OverlayBg";
 const HeroBanner = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="hero-banner position-relative">
       {/* header is here */}
@@ -23,6 +26,7 @@ const HeroBanner = () => {
               <h6>We Provide All Health Care Solution</h6>
               <h1>Protect Your Health And Take Care To Of Your Health</h1>
               <MyButtonLg
+                action={() => navigate("/about")}
                 className={"hero-btn"}
                 style={{
                   width: "200px",
