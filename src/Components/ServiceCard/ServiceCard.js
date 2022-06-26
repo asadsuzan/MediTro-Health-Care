@@ -12,7 +12,7 @@ const ServiceCard = () => {
           {services.map((service) => {
             const { name, description, thumb } = service;
             return (
-              <div className="service-item shadow-lg">
+              <div className="service-item shadow-sm">
                 <figure>
                   <img src={thumb} alt="service-icon" className="img-fluid" />
                 </figure>

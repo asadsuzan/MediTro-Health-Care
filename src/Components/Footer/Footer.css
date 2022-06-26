@@ -11,6 +11,10 @@
   background-size: cover;
   background-position: center;
 }
+.footer h3,
+span {
+  color: var(--hover-text);
+}
 .f-title {
   color: var(--primary-text);
   font-size: 20px;

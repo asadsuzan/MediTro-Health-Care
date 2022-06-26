@@ -10,6 +10,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 350px;
+  border: 1px solid #b2f0fb;
 }
 .service-item figure {
   border: 2px solid rgba(86, 90, 207, 0.1);

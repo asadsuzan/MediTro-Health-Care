@@ -11,8 +11,8 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="container">
-        <div className="row g-5">
-          <div className="col xl-4 col-lg-4 col-md-4 col-12">
+        <div className="row ">
+          <div className="col-xl-4 col-lg-6 col-md-12 col-12">
             <div>
               <div className="f-title">
                 <img src={logo} alt="meditro" className="f-logo" />
@@ -21,9 +21,11 @@ const Footer = () => {
                 Lorem ipsum is dolor sit amet, csectetur adipiscing elit, dolore
                 smod tempor incididunt ut labore et.
               </p>
+              <span className="pb-2 d-inline-block">Contact Us</span>
+              <h3 className="">+088 1614010594</h3>
             </div>
           </div>
-          <div className="col xl-4 col-lg-4 col-md-4 col-12 d-flex justify-content-between">
+          <div className="col-xl-4 col-lg-6 col-md-12 col-12 d-flex justify-content-between">
             <ul className="f-links list-unstyled">
               <div className="f-title">Quick Links</div>
               <li> About Us</li>
@@ -44,7 +46,7 @@ const Footer = () => {
               <li>Abmbulance Services</li>
             </ul>
           </div>
-          <div className="col xl-4 col-lg-4 col-md-4 col-12">
+          <div className="col-xl-4 col-lg-6 col-md-12 col-12">
             <div className="f-title">subscribe now</div>
             <form className="subscribe-form">
               <input
@@ -72,6 +74,10 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <hr />
+        <code className="text-center d-block">
+          Copyright © 2022 Design & Developed by Asad Suzan
+        </code>
       </div>
     </footer>
   );

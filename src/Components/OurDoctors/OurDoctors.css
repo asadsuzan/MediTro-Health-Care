@@ -12,6 +12,7 @@
   background: #f7f7ff;
   border-radius: 20px;
   transition: all 0.5s linear;
+  border: 1px solid #b2f0fb;
 }
 .doctor h6 {
   color: var(--primary-text);

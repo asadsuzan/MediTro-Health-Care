@@ -71,10 +71,3 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
-
-{
-  /* <SectionTitle style={{ textAlign: "center" }}>
-<h6>about us</h6>
-<h2>The Great Place Of Medical Hospital Center</h2>
-</SectionTitle> */
-}
