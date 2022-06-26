@@ -31,10 +31,10 @@ const Facilities = () => {
           {/* right side */}
           <div className="col-xl-8 col-lg-8 col-md-12 col-12 ">
             <div className="facility-wrapper">
-              {facilities.map((facility) => {
+              {facilities.map((facility, id) => {
                 const { facilities, thumb } = facility;
                 return (
-                  <div className="facility shadow">
+                  <div key={id} className="facility shadow">
                     <figure>
                       <img src={thumb} alt="facility" className="img fluid" />
                     </figure>

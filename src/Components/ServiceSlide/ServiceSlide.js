@@ -76,9 +76,9 @@ const ServiceSlide = () => {
             className="mySwiper"
           >
             {services.map((service) => {
-              const { name, description, thumb } = service;
+              const { name, description, thumb, _id } = service;
               return (
-                <SwiperSlide>
+                <SwiperSlide key={_id}>
                   <div className="service-item ">
                     <figure>
                       <img
@@ -93,6 +93,7 @@ const ServiceSlide = () => {
                     </div>
                     <MyButtonLg
                       className={"book-now-btn"}
+                      action={() => navigate(`service/${_id}`)}
                       style={{
                         width: "150px",
                         padding: "10px 0",

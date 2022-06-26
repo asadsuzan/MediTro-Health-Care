@@ -1,18 +1,20 @@
 import React from "react";
 import { UseServices } from "../../hooks";
 import { MyButtonLg } from "../MyButtons/MyButtons";
+import { useNavigate } from "react-router-dom";
 import "./ServiceCard.css";
 
 const ServiceCard = () => {
   const [services] = UseServices();
+  const navigate = useNavigate();
   return (
     <div className="all-services">
       <div className="container">
         <div className="services-wrapper">
           {services.map((service) => {
-            const { name, description, thumb } = service;
+            const { name, description, thumb, _id } = service;
             return (
-              <div className="service-item shadow-sm">
+              <div key={_id} className="service-item shadow-sm">
                 <figure>
                   <img src={thumb} alt="service-icon" className="img-fluid" />
                 </figure>
@@ -22,6 +24,7 @@ const ServiceCard = () => {
                 </div>
                 <MyButtonLg
                   className={"book-now-btn"}
+                  action={() => navigate(`${_id}`)}
                   style={{
                     width: "150px",
                     padding: "10px 0",

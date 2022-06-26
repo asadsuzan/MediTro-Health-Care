@@ -45,6 +45,7 @@ const OurDoctors = () => {
         <div className="filter-tab d-flex my-5" style={{ gap: "10px" }}>
           {tabBtn.map((element, index) => (
             <MyButtonLg
+              key={index}
               style={{
                 background: "#e1e2f6",
                 padding: "10px 0",
@@ -61,10 +62,10 @@ const OurDoctors = () => {
         </div>
 
         <div className="doctors-wrapper">
-          {newDoctors.map((doctor) => {
+          {newDoctors.map((doctor, id) => {
             const { name, degree, expertise, period, fees, thumb } = doctor;
             return (
-              <div className="doctor">
+              <div key={id} className="doctor">
                 <figure>
                   <img src={thumb} alt={name} className="img-fluid" />
                 </figure>
