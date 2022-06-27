@@ -31,5 +31,17 @@ const UseFacilities = () => {
 
   return [facilities, setFacilities];
 };
+const UseService = (id) => {
+  const [service, setService] = useState({});
+  const url = `http://localhost:5000/service/${id}`;
 
-export { UseServices, UseDoctors, UseFacilities };
+  useEffect(() => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setService(data));
+  }, [url]);
+
+  return [service, setService];
+};
+
+export { UseServices, UseDoctors, UseFacilities, UseService };

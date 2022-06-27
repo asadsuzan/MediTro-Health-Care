@@ -1,0 +1,15 @@
+.information {
+}
+.information form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.information input,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #b2f0fb;
+  outline-color: #6ee9ff;
+  border-radius: 10px 10px !important;
+}

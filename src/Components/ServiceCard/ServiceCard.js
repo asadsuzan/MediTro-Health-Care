@@ -9,7 +9,6 @@ const ServiceCard = () => {
   const [services] = UseServices();
   const navigate = useNavigate();
   if (services.length === 0) {
-    console.log("loading");
     return <Loading />;
   }
   return (
