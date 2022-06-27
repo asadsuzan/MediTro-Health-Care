@@ -30,3 +30,8 @@
 .active {
   color: var(--hover-text) !important;
 }
+
+.dropdown-toggle {
+  background-color: #e1e2f6 !important;
+  color: var(--primary-text) !important;
+}

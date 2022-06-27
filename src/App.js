@@ -8,6 +8,7 @@ import ScrollToTop from "./Components/ScrollTop";
 import Booking from "./Pages/Booking/Booking";
 import Login from "./Pages/Login";
 import SignUp from "./Pages/SignUp";
+import RequireAuth from "./Pages/Services/RequireAuth";
 
 function App() {
   return (
@@ -16,7 +17,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/service" element={<Services />} />
-        <Route path="/service/:id" element={<Booking />} />
+        <Route
+          path="/service/:id"
+          element={
+            <RequireAuth>
+              <Booking />
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/login" element={<Login />} />

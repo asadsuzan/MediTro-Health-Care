@@ -3,10 +3,15 @@ import { UseServices } from "../../hooks";
 import { MyButtonLg } from "../MyButtons/MyButtons";
 import { useNavigate } from "react-router-dom";
 import "./ServiceCard.css";
+import Loading from "../Loading/Loading";
 
 const ServiceCard = () => {
   const [services] = UseServices();
   const navigate = useNavigate();
+  if (services.length === 0) {
+    console.log("loading");
+    return <Loading />;
+  }
   return (
     <div className="all-services">
       <div className="container">

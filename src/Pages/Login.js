@@ -1,5 +1,9 @@
 import React from "react";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useAuthState,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
+import { useLocation, useNavigate } from "react-router-dom";
 import AuthenticationForm from "../Components/Authentication/AuthenticationForm";
 
 import Header from "../Components/Header/Header";
@@ -7,6 +11,12 @@ import Loading from "../Components/Loading/Loading";
 import auth from "../firebaseConfig";
 
 const Login = () => {
+  let navigate = useNavigate();
+  let location = useLocation();
+  let [VerifiedUser] = useAuthState(auth);
+
+  let from = location.state?.from?.pathname || "/";
+
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
 
@@ -17,6 +27,10 @@ const Login = () => {
     await signInWithEmailAndPassword(email, password);
     e.target.reset();
   };
+
+  if (VerifiedUser) {
+    navigate(from, { replace: true });
+  }
 
   return (
     <>
