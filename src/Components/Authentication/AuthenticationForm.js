@@ -2,8 +2,9 @@ import React from "react";
 import "./AuthenticationForm.css";
 import logo from "../../assets/logo/logo.png";
 
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { MyButtonLg } from "../MyButtons/MyButtons";
+import SocialLogin from "../../assets/SocialLogin/SocialLogin";
 
 const AuthenticationForm = () => {
   const { pathname } = useLocation();
@@ -28,6 +29,16 @@ const AuthenticationForm = () => {
           <label htmlFor="password"></label>
           <input type="password" placeholder="password" className="" />
         </div>
+        {pathname === "/signup" && (
+          <div className="text-end">
+            <Link to={"/login"}>Already have an account?</Link>
+          </div>
+        )}
+        {pathname === "/login" && (
+          <div className="text-end">
+            <Link to={"/login"}>forgot password?</Link>
+          </div>
+        )}
         <div className="input-group">
           <MyButtonLg
             style={{
@@ -41,6 +52,12 @@ const AuthenticationForm = () => {
           </MyButtonLg>
         </div>
       </form>
+      <SocialLogin />
+      <div className="text-capitalize my-3 text-center">
+        {pathname === "/login" && (
+          <Link to={"/signup"}>don't have an account? Register</Link>
+        )}
+      </div>
     </div>
   );
 };

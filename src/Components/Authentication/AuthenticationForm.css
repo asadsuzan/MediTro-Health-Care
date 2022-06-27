@@ -20,3 +20,8 @@
   outline-color: #82ecff;
   border-radius: 10px 10px !important;
 }
+.AuthenticationForm a {
+  font-size: 14px;
+  text-transform: capitalize;
+  font-weight: 500;
+}

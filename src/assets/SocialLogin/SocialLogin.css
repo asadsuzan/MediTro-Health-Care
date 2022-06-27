@@ -1,0 +1,8 @@
+.divider {
+  gap: 20px;
+}
+.divider-line {
+  background-color: #b2f0fb;
+  height: 2px;
+  width: 100%;
+}
