@@ -4,29 +4,27 @@ import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 
 import Header from "../Components/Header/Header";
 import auth from "../firebaseConfig";
+import { async } from "@firebase/util";
+import Loading from "../Components/Loading/Loading";
 
 const SignUp = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
 
-  const handleSignup = (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    createUserWithEmailAndPassword(email, password);
+    await createUserWithEmailAndPassword(email, password);
+    e.target.reset();
   };
-  if (user) {
-    console.log(user);
-  }
-  if (error) {
-    console.error(error.message);
-  }
 
   return (
     <>
       <Header />
-      <AuthenticationForm action={handleSignup} />
+      {loading && <Loading />}
+      <AuthenticationForm action={handleSignup} error={error} />
     </>
   );
 };

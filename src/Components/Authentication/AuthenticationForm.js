@@ -6,7 +6,7 @@ import { Link, useLocation } from "react-router-dom";
 import { MyButtonLg } from "../MyButtons/MyButtons";
 import SocialLogin from "../../assets/SocialLogin/SocialLogin";
 
-const AuthenticationForm = ({ action }) => {
+const AuthenticationForm = ({ action, error }) => {
   const { pathname } = useLocation();
 
   return (
@@ -57,6 +57,7 @@ const AuthenticationForm = ({ action }) => {
             <Link to={"/login"}>forgot password?</Link>
           </div>
         )}
+        {error && <small className="text-danger">{error.message}</small>}
         <div className="input-group">
           <MyButtonLg
             style={{
