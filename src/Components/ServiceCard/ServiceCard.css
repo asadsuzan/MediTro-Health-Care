@@ -27,5 +27,11 @@
 }
 .service-item p {
   color: var(--pera-text);
-  font-weight: 500;
+  font-weight: 400;
+  font-size: 15px;
+}
+.s-fees p {
+  color: var(--primary-text) !important;
+  font-size: 13px;
+  font-weight: 900;
 }

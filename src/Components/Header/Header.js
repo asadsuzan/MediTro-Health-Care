@@ -17,6 +17,8 @@ function Header() {
   const [sticky, setSticky] = useState(false);
   const navigate = useNavigate();
   const [user] = useAuthState(auth);
+  const d = new Date();
+  console.log(d.getFullYear(), d.getMonth());
 
   useEffect(() => {
     window.addEventListener("scroll", () => {

@@ -17,7 +17,8 @@ const ServiceCard = () => {
       <div className="container">
         <div className="services-wrapper">
           {services.map((service) => {
-            const { name, description, thumb, _id } = service;
+            const { name, description, thumb, consultingFee, bookingFee, _id } =
+              service;
             return (
               <div key={_id} className="service-item shadow-sm">
                 <figure>
@@ -25,6 +26,10 @@ const ServiceCard = () => {
                 </figure>
                 <div>
                   <h5>{name}</h5>
+                  <div className="d-flex s-fees justify-content-between">
+                    <p>Consulting Fee: ${consultingFee}</p>
+                    <p>Booking Fee: ${bookingFee}</p>
+                  </div>
                   <p>{description}</p>
                 </div>
                 <MyButtonLg

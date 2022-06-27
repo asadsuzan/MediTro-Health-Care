@@ -76,7 +76,14 @@ const ServiceSlide = () => {
             className="mySwiper"
           >
             {services.map((service) => {
-              const { name, description, thumb, _id } = service;
+              const {
+                name,
+                description,
+                thumb,
+                bookingFee,
+                consultingFee,
+                _id,
+              } = service;
               return (
                 <SwiperSlide key={_id}>
                   <div className="service-item ">
@@ -89,6 +96,10 @@ const ServiceSlide = () => {
                     </figure>
                     <div>
                       <h5>{name}</h5>
+                      <div className="d-flex s-fees justify-content-between">
+                        <p>Consulting Fee: ${consultingFee}</p>
+                        <p>Booking Fee: ${bookingFee}</p>
+                      </div>
                       <p>{description}</p>
                     </div>
                     <MyButtonLg
