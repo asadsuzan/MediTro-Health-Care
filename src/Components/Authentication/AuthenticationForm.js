@@ -6,7 +6,7 @@ import { Link, useLocation } from "react-router-dom";
 import { MyButtonLg } from "../MyButtons/MyButtons";
 import SocialLogin from "../../assets/SocialLogin/SocialLogin";
 
-const AuthenticationForm = () => {
+const AuthenticationForm = ({ action }) => {
   const { pathname } = useLocation();
 
   return (
@@ -14,20 +14,38 @@ const AuthenticationForm = () => {
       <figure className="AuthenticationForm-logo">
         <img src={logo} alt="logo" className="img-fluid" />
       </figure>
-      <form>
+      <form onSubmit={action}>
         {pathname === "/signup" && (
           <div className="input-group">
             <label htmlFor="name"></label>
-            <input type="text" name="name" placeholder="Name" className="" />
+            <input
+              required
+              type="text"
+              name="name"
+              placeholder="Name"
+              className=""
+            />
           </div>
         )}
         <div className="input-group">
           <label htmlFor="email"></label>
-          <input type="email" placeholder="email" className="" />
+          <input
+            required
+            type="email"
+            name="email"
+            placeholder="email"
+            className=""
+          />
         </div>
         <div className="input-group">
           <label htmlFor="password"></label>
-          <input type="password" placeholder="password" className="" />
+          <input
+            required
+            type="password"
+            name="password"
+            placeholder="password"
+            className=""
+          />
         </div>
         {pathname === "/signup" && (
           <div className="text-end">

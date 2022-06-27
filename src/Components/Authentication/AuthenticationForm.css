@@ -25,3 +25,9 @@
   text-transform: capitalize;
   font-weight: 500;
 }
+.AuthenticationForm ::placeholder {
+  text-transform: uppercase;
+  font-size: 13px;
+  color: var(--pera-text);
+  font-weight: 500;
+}

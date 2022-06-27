@@ -8,10 +8,14 @@ import { MyButtonLg } from "../MyButtons/MyButtons";
 import "./Header.css";
 import { useEffect } from "react";
 import { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebaseConfig";
+import { signOut } from "firebase/auth";
 
 function Header() {
   const [sticky, setSticky] = useState(false);
   const navigate = useNavigate();
+  const [user] = useAuthState(auth);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -62,9 +66,9 @@ function Header() {
               >
                 contact
               </NavLink>
-              {
+              {user ? (
                 <MyButtonLg
-                  action={() => navigate("/login")}
+                  action={() => signOut(auth)}
                   className={"header-btn"}
                   style={{
                     width: "150px",
@@ -73,9 +77,22 @@ function Header() {
                   }}
                 >
                   {" "}
-                  login
+                  signOut
                 </MyButtonLg>
-              }
+              ) : (
+                <MyButtonLg
+                  action={() => navigate("/login")}
+                  className={"header-btn"}
+                  style={{
+                    width: "160px",
+                    padding: "10px 0",
+                    background: "#1f2278",
+                  }}
+                >
+                  {" "}
+                  login/singUp
+                </MyButtonLg>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>
