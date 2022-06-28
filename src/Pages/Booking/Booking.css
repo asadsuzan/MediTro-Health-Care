@@ -1,15 +1,60 @@
-.information {
+.information h4 {
+  color: var(--primary-text);
+  font-weight: 600;
+  font-size: 1.3rem;
 }
 .information form {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+.information form label {
+  color: var(--pera-text);
+  text-transform: capitalize;
+  padding: 4px 0;
+  font-weight: 500;
+}
+.information form ::placeholder {
+  color: var(--pera-text);
+  font-weight: 500;
+}
 .information input,
 select {
   width: 100%;
   padding: 10px;
   border: 2px solid #b2f0fb;
-  outline-color: #6ee9ff;
+  outline-color: #20deff;
   border-radius: 10px 10px !important;
+  transition: all 0.4s linear !important;
+}
+.booking-summary span {
+  color: var(--primary-text);
+  font-size: 1.3rem;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+.booking-summary h6 {
+  color: var(--primary-text);
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+.booking-summary p {
+  color: var(--primary-text);
+  font-size: 14px;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+.booking-summary img {
+  width: 100px;
+}
+.booking-summary {
+  padding: 3rem;
+}
+
+/* media query */
+@media screen and (max-width: 1199px) {
+  .booking-summary {
+    padding: 2rem;
+  }
 }

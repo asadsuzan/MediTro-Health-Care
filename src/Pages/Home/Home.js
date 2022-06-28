@@ -10,23 +10,23 @@ const Home = () => {
   return (
     <>
       <HeroBanner />
-      <section>
+      <section className="section">
         {" "}
         <AboutUs />
       </section>
-      <section>
+      <section className="section">
         {" "}
         <WorkProcess />
       </section>
-      <section>
+      <section className="section">
         {" "}
         <ServiceSlide />
       </section>
-      <section>
+      <section className="section">
         {" "}
         <Facilities />
       </section>
-      <section>
+      <section className="section">
         {" "}
         <OurDoctors />
       </section>

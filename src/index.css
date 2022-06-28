@@ -21,11 +21,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-section {
-  margin-bottom: 10rem;
+.section {
+  margin-bottom: 8rem;
 }
 @media screen and (max-width: 767px) {
-  section {
+  .section {
     margin-bottom: 5rem;
   }
 }

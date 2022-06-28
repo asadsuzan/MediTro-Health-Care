@@ -11,18 +11,19 @@ import "./Booking.css";
 const Booking = () => {
   const { id } = useParams();
   const [service] = UseService(id);
-  console.log(service);
   const [user] = useAuthState(auth);
+  const [date, SetDate] = useState("");
+  const [time, SetTime] = useState("");
   return (
     <>
       <Header />
-      <div className="booking-from-container my">
+      <div className="booking-from-container section">
         <div className="container">
-          <div className="row">
+          <div className="row justify-content-center align-items-center gy-5">
             {/* left side for form */}
-            <div className="col-xl-7 col-lg-7 col-md-7 col-12">
+            <div className="col-xl-7 col-lg-7 col-md-12 col-12">
               <div className="information">
-                <h2>personal information</h2>
+                <h4 className="text-capitalize py-3">personal information</h4>
                 <form action="">
                   <div className="input-group">
                     <label htmlFor="name">Your Name</label>
@@ -47,7 +48,10 @@ const Booking = () => {
                   </div>
                   <div className="input-group">
                     <label htmlFor="slot">Select Time</label>
-                    <select name="slot">
+                    <select
+                      name="slot"
+                      onChange={(e) => SetTime(e.target.value)}
+                    >
                       {service?.slots?.map((slot, index) => {
                         return <option key={index}>{slot}</option>;
                       })}
@@ -55,7 +59,11 @@ const Booking = () => {
                   </div>
                   <div className="input-group">
                     <label htmlFor="date">Select Date</label>
-                    <input type="date" name="date" />
+                    <input
+                      type="date"
+                      name="date"
+                      onChange={(e) => SetDate(e.target.value)}
+                    />
                   </div>
                   <MyButtonLg
                     style={{
@@ -71,7 +79,54 @@ const Booking = () => {
               </div>
             </div>
             {/* right side for summary */}
-            <div className="col-xl-7 col-lg-7 col-md-7 col-12"></div>
+            <div className="col-xl-5 col-lg-5 col-md-12 col-12">
+              <div className="booking-summary border border-1 shadow-sm">
+                <span className="summary-title">Booking Summary</span>
+                <hr />
+                <figure
+                  className="d-flex align-items-center h-100"
+                  style={{ gap: "15px" }}
+                >
+                  <img
+                    src={service.thumb}
+                    alt={service.name}
+                    className="img-fluid"
+                  />
+                  <div>
+                    {" "}
+                    <h6>{service.name}</h6>
+                    <p>{service.description}</p>
+                  </div>
+                </figure>
+
+                <div className="d-flex justify-content-between">
+                  <div>
+                    <p>date</p>
+                    <p>time</p>
+                    <p>Consulting Fee</p>
+                    <p>Booking Fee</p>
+                  </div>
+
+                  <div className="text-end">
+                    <p className={!date && "text-danger"}>
+                      {date ? date : "N/A"}
+                    </p>
+                    <p className={!time && "text-danger"}>
+                      {time ? time : "N/A"}
+                    </p>
+                    <p>${service.bookingFee}</p>
+                    <p>${service.consultingFee}</p>
+                  </div>
+                </div>
+                <hr />
+                <div className="d-flex justify-content-between text-end">
+                  <p className="fs-5">total</p>
+                  <p className="fs-5">
+                    ${+service.bookingFee + service.consultingFee}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
