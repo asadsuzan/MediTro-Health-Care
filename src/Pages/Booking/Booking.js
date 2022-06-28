@@ -14,6 +14,33 @@ const Booking = () => {
   const [user] = useAuthState(auth);
   const [date, SetDate] = useState("");
   const [time, SetTime] = useState("");
+  const bookingDate = new Date().toLocaleDateString();
+  const bookingTime = new Date().toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+
+  const handleBooking = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const number = e.target.number.value;
+    const appointmentTime = e.target.slot.value;
+    const appointmentDate = e.target.date.value;
+
+    const bookingInfo = {
+      name,
+      email,
+      number,
+      appointmentTime,
+      appointmentDate,
+      bookingDate,
+      bookingTime,
+      serviceId: id,
+    };
+    console.log(bookingInfo);
+  };
+
   return (
     <>
       <Header />
@@ -24,10 +51,11 @@ const Booking = () => {
             <div className="col-xl-7 col-lg-7 col-md-12 col-12">
               <div className="information">
                 <h4 className="text-capitalize py-3">personal information</h4>
-                <form action="">
+                <form onSubmit={handleBooking}>
                   <div className="input-group">
                     <label htmlFor="name">Your Name</label>
                     <input
+                      required
                       type="text"
                       placeholder={user.displayName}
                       name="name"
@@ -36,19 +64,26 @@ const Booking = () => {
 
                   <div className="input-group">
                     <label htmlFor="email">Your Email</label>
-                    <input type="email" placeholder={user.email} name="email" />
+                    <input
+                      required
+                      type="email"
+                      placeholder={user.email}
+                      name="email"
+                    />
                   </div>
                   <div className="input-group">
                     <label htmlFor="number">Your Number</label>
                     <input
-                      type="email"
+                      required
+                      type="number"
                       placeholder={"01XXXXXXX"}
-                      name="email"
+                      name="number"
                     />
                   </div>
                   <div className="input-group">
                     <label htmlFor="slot">Select Time</label>
                     <select
+                      required
                       name="slot"
                       onChange={(e) => SetTime(e.target.value)}
                     >
@@ -60,6 +95,7 @@ const Booking = () => {
                   <div className="input-group">
                     <label htmlFor="date">Select Date</label>
                     <input
+                      required
                       type="date"
                       name="date"
                       onChange={(e) => SetDate(e.target.value)}

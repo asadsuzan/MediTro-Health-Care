@@ -9,6 +9,9 @@ import Booking from "./Pages/Booking/Booking";
 import Login from "./Pages/Login";
 import SignUp from "./Pages/SignUp";
 import RequireAuth from "./Pages/Services/RequireAuth";
+import Dashboard from "./Pages/Dashboard/Dashboard";
+import UserProfile from "./Components/UserProfile/UserProfile";
+import UserAppointment from "./Components/UserApointments/UserAppointment";
 
 function App() {
   return (
@@ -29,8 +32,12 @@ function App() {
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/dashboard" element={<Dashboard />}>
+          <Route path="profile" element={<UserProfile />} />
+          <Route path="my_Appointments" element={<UserAppointment />} />
+        </Route>
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

@@ -1,0 +1,79 @@
+.dashboard-toggler {
+  background-color: #f8f9fa;
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  padding: 2rem;
+}
+.dashboard-toggler button {
+  border: none;
+  background: transparent;
+}
+.dashboard-toggler a,
+span {
+  font-size: 15px;
+  padding: 10px 3px;
+  text-transform: uppercase;
+}
+.dashboard-toggler p {
+  font-weight: bolder;
+  color: var(--primary-text);
+  padding: 0 10px;
+  font-size: 1.5rem !important;
+}
+.d-nav {
+  height: 100vh;
+  width: 300px;
+  background: #ecfcff;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  transform: translateX(-100%);
+  transition: all 0.4s linear;
+}
+.d-nav-active {
+  transform: translateX(0);
+}
+.dashboard {
+  width: 100%;
+  height: calc(100vh - 100px);
+  margin-top: 50px;
+  margin-top: 100px;
+  padding: 2rem;
+}
+.d-nav-top {
+  border-bottom: 1px solid #bbddff;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.d-nav-top figure {
+  width: 100px;
+  height: 100%;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.d-nav-top img {
+  border-radius: 50%;
+}
+.d-nav-top p {
+  font-size: 1rem;
+  padding: 10px 0;
+  color: var(--primary-text);
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.d-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.d-nav-links a {
+  border-bottom: 1px solid #bbddff;
+  padding: 1rem;
+  font-size: 1.4rem;
+}
+.d-nav-links a b {
+  margin-left: 5px;
+}

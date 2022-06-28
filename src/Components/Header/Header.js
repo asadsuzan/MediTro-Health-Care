@@ -67,6 +67,14 @@ function Header() {
               >
                 contact
               </NavLink>
+              {user && (
+                <NavLink
+                  className={"text-uppercase text-decoration-none"}
+                  to="/dashboard"
+                >
+                  dashboard
+                </NavLink>
+              )}
               {user ? (
                 <NavDropdown title={user?.displayName} id="basic-nav-dropdown">
                   <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
