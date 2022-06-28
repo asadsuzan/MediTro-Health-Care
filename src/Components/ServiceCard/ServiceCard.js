@@ -12,7 +12,7 @@ const ServiceCard = () => {
     return <Loading />;
   }
   return (
-    <div className="all-services">
+    <div className="all-services section">
       <div className="container">
         <div className="services-wrapper">
           {services.map((service) => {

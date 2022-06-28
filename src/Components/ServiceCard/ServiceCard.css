@@ -35,3 +35,20 @@
   font-size: 13px;
   font-weight: 900;
 }
+
+/* media query */
+@media screen and (max-width: 1199px) {
+  .service-item {
+    padding: 1rem;
+  }
+}
+@media screen and (max-width: 999px) {
+  .services-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 767px) {
+  .services-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

@@ -1,9 +1,8 @@
+import { UseFacilities } from "../../hooks";
 import React from "react";
 import SectionTitle from "../SectionTitle/SectionTitle";
-import { UseFacilities } from "../../hooks";
-import "./Facilities.css";
-
 import facilityThumb from "../../assets/facilities/f.png";
+import "./Facilities.css";
 
 const Facilities = () => {
   const [facilities] = UseFacilities();

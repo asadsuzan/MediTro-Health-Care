@@ -9,15 +9,7 @@
   transition: all 0.4s ease;
   z-index: 9999999999 !important;
 }
-/* .navbar-nav {
-  z-index: 999 !important;
 
-  background: whitesmoke !important;
-  min-height: 100vh;
-  width: 100vw;
-  padding: 0;
-  margin: 0;
-} */
 .primary-header a {
   color: var(--primary-text);
   font-size: 15px;
@@ -34,4 +26,13 @@
 .dropdown-toggle {
   background-color: #e1e2f6 !important;
   color: var(--primary-text) !important;
+}
+
+@media screen and (max-width: 991px) {
+  .navbar-nav {
+    z-index: 999 !important;
+    background: #f8f9fa;
+    padding-bottom: 2rem !important;
+    transition: all 5s linear !important;
+  }
 }

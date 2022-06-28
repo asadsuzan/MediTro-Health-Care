@@ -1,8 +1,4 @@
-import React from "react";
-import Header from "../Header/Header";
 import { MyButtonLg } from "../MyButtons/MyButtons";
-import heroThumb from "../../assets/hero-img/hero-min.png";
-import "./HeroBanner.css";
 import { useNavigate } from "react-router-dom";
 import {
   OverlayBg1,
@@ -10,6 +6,11 @@ import {
   OverlayBg4,
   OverlayBg5,
 } from "../OverlayBg/OverlayBg";
+import React from "react";
+import Header from "../Header/Header";
+import heroThumb from "../../assets/hero-img/hero-min.png";
+import "./HeroBanner.css";
+
 const HeroBanner = () => {
   const navigate = useNavigate();
 
@@ -30,7 +31,7 @@ const HeroBanner = () => {
                 className={"hero-btn"}
                 style={{
                   width: "200px",
-                  padding: "15px 0",
+                  padding: "12px 0",
                   background: "#f17732",
                 }}
               >

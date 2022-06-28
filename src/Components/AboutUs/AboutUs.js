@@ -1,8 +1,3 @@
-import React from "react";
-import aboutThumb1 from "../../assets/about-img/about1.jpg";
-import aboutThumb2 from "../../assets/about-img/about2.jpg";
-import aboutThumb3 from "../../assets/about-img/about3.jpg";
-import Features from "../Features/Features";
 import {
   OverlayBg1,
   OverlayBg2,
@@ -13,6 +8,12 @@ import {
   OverlayBg7,
   OverlayBg8,
 } from "../OverlayBg/OverlayBg";
+
+import React from "react";
+import aboutThumb1 from "../../assets/about-img/about1.jpg";
+import aboutThumb2 from "../../assets/about-img/about2.jpg";
+import aboutThumb3 from "../../assets/about-img/about3.jpg";
+import Features from "../Features/Features";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import "./AboutUs.css";
 

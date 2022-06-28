@@ -1,10 +1,9 @@
-import React from "react";
-import "./AuthenticationForm.css";
-import logo from "../../assets/logo/logo.png";
-
 import { Link, useLocation } from "react-router-dom";
 import { MyButtonLg } from "../MyButtons/MyButtons";
+import React from "react";
+import logo from "../../assets/logo/logo.png";
 import SocialLogin from "../../assets/SocialLogin/SocialLogin";
+import "./AuthenticationForm.css";
 
 const AuthenticationForm = ({ action, error }) => {
   const { pathname } = useLocation();

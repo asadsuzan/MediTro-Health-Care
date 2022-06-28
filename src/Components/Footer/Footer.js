@@ -1,6 +1,6 @@
+import { MyButtonLg } from "../MyButtons/MyButtons";
 import React from "react";
 import logo from "../../assets/logo/logo.png";
-import { MyButtonLg } from "../MyButtons/MyButtons";
 import fb from "../../assets/social/fb.png";
 import linkedin from "../../assets/social/linkdin.png";
 import insta from "../../assets/social/insta.png";

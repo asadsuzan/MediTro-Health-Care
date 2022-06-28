@@ -1,17 +1,17 @@
-import Container from "react-bootstrap/Container";
-import { Link, useNavigate } from "react-router-dom";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import { NavLink } from "react-router-dom";
-import logo from "../../assets/logo/logo.png";
+import { NavLink, useNavigate } from "react-router-dom";
 import { MyButtonLg } from "../MyButtons/MyButtons";
-import "./Header.css";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import auth from "../../firebaseConfig";
 import { signOut } from "firebase/auth";
+
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import logo from "../../assets/logo/logo.png";
+import auth from "../../firebaseConfig";
+import "./Header.css";
 
 function Header() {
   const [sticky, setSticky] = useState(false);

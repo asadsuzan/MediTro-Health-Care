@@ -21,6 +21,13 @@
 }
 
 /* media query */
+@media screen and (min-width: 1600px) {
+  .hero-banner {
+    height: auto !important;
+    margin-bottom: 2rem;
+  }
+}
+
 @media screen and (max-width: 1199px) {
   .hero-banner-content-left h1 {
     font-size: 2.4rem;
@@ -33,6 +40,4 @@
   .hero-banner-content-left h1 {
     font-size: 1.5rem;
   }
-}
-@media screen and (max-width: 990px) {
 }

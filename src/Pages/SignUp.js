@@ -1,15 +1,14 @@
-import React from "react";
-import AuthenticationForm from "../Components/Authentication/AuthenticationForm";
 import {
   useAuthState,
   useCreateUserWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
-
+import { useUpdateProfile } from "react-firebase-hooks/auth";
+import { useLocation, useNavigate } from "react-router-dom";
+import React from "react";
+import AuthenticationForm from "../Components/Authentication/AuthenticationForm";
 import Header from "../Components/Header/Header";
 import auth from "../firebaseConfig";
 import Loading from "../Components/Loading/Loading";
-import { useUpdateProfile } from "react-firebase-hooks/auth";
-import { useLocation, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   let navigate = useNavigate();
@@ -30,7 +29,7 @@ const SignUp = () => {
     await updateProfile({ displayName: name });
     e.target.reset();
   };
-  if (VerifiedUser) {
+  if (VerifiedUser || user) {
     navigate(from, { replace: true });
   }
   return (
