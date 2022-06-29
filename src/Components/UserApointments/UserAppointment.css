@@ -33,3 +33,17 @@ table td,
   color: var(--primary-text);
   font-weight: bold;
 }
+.d-massage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 200px);
+}
+.d-massage h3 {
+  text-transform: capitalize;
+  color: var(--hover-text);
+  padding: 1rem 0;
+  font-size: 20px;
+  font-weight: bold;
+}

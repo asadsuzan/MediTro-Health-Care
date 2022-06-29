@@ -6,11 +6,14 @@ import { useEffect } from "react";
 import auth from "../../firebaseConfig";
 import { UseService } from "../../hooks";
 import Loading from "../Loading/Loading";
+import { MyButtonLg } from "../MyButtons/MyButtons";
+import { useNavigate } from "react-router-dom";
 
 const UserAppointment = () => {
   const [appointment, setAppointment] = useState([]);
   const [loading, setLoading] = useState(true);
   const [user] = useAuthState(auth);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`http://localhost:5000/my_appointment/${user?.email}`)
@@ -61,7 +64,19 @@ const UserAppointment = () => {
           </tbody>
         </table>
       ) : (
-        <div className="text-center">No Appoinment</div>
+        <div className="text-center d-massage">
+          <h3>you have't no appointment yet</h3>
+          <MyButtonLg
+            action={() => navigate("/service")}
+            style={{
+              width: "250px",
+              background: "#1f2278",
+              padding: "10px 0",
+            }}
+          >
+            book appointment
+          </MyButtonLg>
+        </div>
       )}
     </div>
   );
