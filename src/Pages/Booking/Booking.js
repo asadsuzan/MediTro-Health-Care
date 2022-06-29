@@ -36,9 +36,19 @@ const Booking = () => {
       appointmentDate,
       bookingDate,
       bookingTime,
+      amount: +service.bookingFee + service.consultingFee,
       serviceId: id,
     };
-    console.log(bookingInfo);
+    // console.log(bookingInfo);
+    fetch("http://localhost:5000/appointment", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+      body: JSON.stringify(bookingInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
   };
 
   return (
@@ -67,8 +77,11 @@ const Booking = () => {
                     <input
                       required
                       type="email"
-                      placeholder={user.email}
+                      // placeholder={user.email}
+                      value={user?.email}
                       name="email"
+                      readOnly
+                      disabled
                     />
                   </div>
                   <div className="input-group">
