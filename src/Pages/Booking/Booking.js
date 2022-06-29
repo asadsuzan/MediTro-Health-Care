@@ -38,6 +38,7 @@ const Booking = () => {
       bookingTime,
       amount: +service.bookingFee + service.consultingFee,
       serviceId: id,
+      serviceName: service.name,
     };
     // console.log(bookingInfo);
     fetch("http://localhost:5000/appointment", {

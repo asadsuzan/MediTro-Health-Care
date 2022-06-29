@@ -1,0 +1,35 @@
+.appointment-body table {
+  width: 100%;
+  overflow: hidden;
+}
+.appointment-body {
+  overflow: scroll;
+  height: calc(100vh - 150px);
+}
+table,
+th,
+td {
+  border: 1px solid #b2f0fb;
+  border-collapse: collapse;
+  padding: 1rem;
+}
+
+thead th {
+  background-color: whitesmoke;
+  padding: 10px;
+  text-transform: uppercase;
+  color: var(--primary-text);
+  font-size: 15px;
+}
+tr:nth-child(even) {
+  background-color: rgba(225, 226, 246, 0.5);
+}
+table .time {
+  color: var(--hover-text);
+  font-weight: bold;
+}
+table td,
+.date {
+  color: var(--primary-text);
+  font-weight: bold;
+}

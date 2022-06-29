@@ -1,7 +1,70 @@
 import React from "react";
+import { useState } from "react";
+import "./UserAppointment.css";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useEffect } from "react";
+import auth from "../../firebaseConfig";
+import { UseService } from "../../hooks";
+import Loading from "../Loading/Loading";
 
 const UserAppointment = () => {
-  return <div>UserAppointment</div>;
+  const [appointment, setAppointment] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [user] = useAuthState(auth);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/my_appointment/${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setAppointment(data);
+        setLoading(false);
+      });
+  }, [user]);
+
+  if (loading) {
+    return <Loading></Loading>;
+  }
+
+  return (
+    <div className="appointment-body">
+      {appointment.length ? (
+        <table>
+          <thead className="shadow-sm">
+            <tr>
+              <th>service</th>
+              <th>appointment date</th>
+              <th>booking date</th>
+              <th>amount</th>
+              <th>status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {appointment?.map((data, index) => {
+              return (
+                <tr key={index}>
+                  <td>{data.serviceName}</td>
+                  <td>
+                    <span className="time">{data.appointmentTime}</span> <br />
+                    <span className="date">{data.appointmentDate}</span>
+                  </td>
+                  <td>
+                    <span className="time">{data.bookingTime}</span> <br />
+                    <span className="date">{data.bookingDate}</span>
+                  </td>
+                  <td>${data.amount}</td>
+                  <td className="text-success fw-bold">
+                    <p>pending</p>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      ) : (
+        <div className="text-center">No Appoinment</div>
+      )}
+    </div>
+  );
 };
 
 export default UserAppointment;

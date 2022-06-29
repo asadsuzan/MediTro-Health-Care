@@ -8,9 +8,11 @@ import { MyButtonLg } from "../../Components/MyButtons/MyButtons";
 import { CgProfile } from "react-icons/cg";
 import { MdDashboard } from "react-icons/md";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
+import { AiOutlineClose } from "react-icons/ai";
 import { FiLogOut } from "react-icons/fi";
 import { useState } from "react";
 import userThumb from "../../assets/about-img/about1.jpg";
+import { signOut } from "firebase/auth";
 
 const Dashboard = () => {
   const [user] = useAuthState(auth);
@@ -21,8 +23,11 @@ const Dashboard = () => {
     <>
       <div className="dashboard-toggler shadow-sm  d-flex">
         <button onClick={() => setActive(!active)}>
-          {" "}
-          <HiOutlineMenuAlt2 size={"3rem"} />
+          {active ? (
+            <AiOutlineClose size={"3rem"} />
+          ) : (
+            <HiOutlineMenuAlt2 size={"3rem"} />
+          )}
         </button>
 
         <div>
@@ -54,6 +59,7 @@ const Dashboard = () => {
             <b>Appointment</b>
           </NavLink>
           <MyButtonLg
+            action={() => signOut(auth)}
             style={{
               background: "#f17732",
               padding: "10px 0",

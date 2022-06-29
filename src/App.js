@@ -32,9 +32,30 @@ function App() {
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/dashboard" element={<Dashboard />}>
-          <Route path="profile" element={<UserProfile />} />
-          <Route path="my_Appointments" element={<UserAppointment />} />
+        <Route
+          path="/dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
+        >
+          <Route
+            path="profile"
+            element={
+              <RequireAuth>
+                <UserProfile />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="my_Appointments"
+            element={
+              <RequireAuth>
+                <UserAppointment />
+              </RequireAuth>
+            }
+          />
         </Route>
       </Routes>
       {/* <Footer /> */}

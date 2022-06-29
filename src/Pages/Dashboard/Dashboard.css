@@ -10,9 +10,10 @@
   border: none;
   background: transparent;
 }
+
 .dashboard-toggler a,
 span {
-  font-size: 15px;
+  font-size: 13px;
   padding: 10px 3px;
   text-transform: uppercase;
 }
