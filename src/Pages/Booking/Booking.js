@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Header from "../../Components/Header/Header";
 import { MyButtonLg } from "../../Components/MyButtons/MyButtons";
 import auth from "../../firebaseConfig";
@@ -19,7 +19,7 @@ const Booking = () => {
     hour: "2-digit",
     minute: "2-digit",
   });
-
+  const navigate = useNavigate();
   const handleBooking = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
@@ -49,7 +49,11 @@ const Booking = () => {
       body: JSON.stringify(bookingInfo),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (data?.insertedId) {
+          navigate(`/invoice/${data.insertedId}`);
+        }
+      });
   };
 
   return (

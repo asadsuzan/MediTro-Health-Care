@@ -12,6 +12,7 @@ import RequireAuth from "./Pages/Services/RequireAuth";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import UserProfile from "./Components/UserProfile/UserProfile";
 import UserAppointment from "./Components/UserApointments/UserAppointment";
+import Invoice from "./Pages/Invoice/Invoice";
 
 function App() {
   return (
@@ -32,6 +33,14 @@ function App() {
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route
+          path="/Invoice/:id"
+          element={
+            <RequireAuth>
+              <Invoice />
+            </RequireAuth>
+          }
+        />
         <Route
           path="/dashboard"
           element={

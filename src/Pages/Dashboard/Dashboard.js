@@ -1,6 +1,5 @@
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import React from "react";
-import Header from "../../Components/Header/Header";
 import "./Dashboard.css";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebaseConfig";

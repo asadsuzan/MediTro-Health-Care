@@ -1,0 +1,7 @@
+.invoice {
+  border: 1px solid #b2f0fb;
+  width: 600px;
+  margin: 0 auto;
+  height: 50vh;
+  gap: 20px;
+}
