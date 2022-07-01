@@ -31,3 +31,9 @@
   color: var(--pera-text);
   font-weight: 500;
 }
+
+@media screen and (max-width: 510px) {
+  .AuthenticationForm {
+    width: 98% !important;
+  }
+}

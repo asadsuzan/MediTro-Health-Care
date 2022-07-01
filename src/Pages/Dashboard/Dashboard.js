@@ -16,28 +16,51 @@ import { signOut } from "firebase/auth";
 const Dashboard = () => {
   const [user] = useAuthState(auth);
   const [active, setActive] = useState(false);
+  const [darkMood, setDarkMood] = useState(false);
   const { pathname } = useLocation();
 
   return (
     <>
-      <div className="dashboard-toggler shadow-sm  d-flex">
-        <button onClick={() => setActive(!active)}>
-          {active ? (
-            <AiOutlineClose size={"3rem"} />
-          ) : (
-            <HiOutlineMenuAlt2 size={"3rem"} />
-          )}
-        </button>
-
+      <div
+        className={`dashboard-toggler d-flex justify-content-between align-items-center ${
+          darkMood && "dark-mood"
+        }`}
+      >
+        <div className="d-flex ">
+          {" "}
+          <button onClick={() => setActive(!active)}>
+            {active ? (
+              <AiOutlineClose size={"3rem"} />
+            ) : (
+              <HiOutlineMenuAlt2 size={"3rem"} />
+            )}
+          </button>
+          <div className="fw-bold">
+            {" "}
+            <Link to={"/"}>Home</Link>
+            <span>{pathname}</span>
+            <p className={`${darkMood && "text-light"}`}>Dashboard</p>
+          </div>
+        </div>
         <div>
           {" "}
-          <Link to={"/"}>Home</Link>
-          <span>{pathname}</span>
-          <p>Dashboard</p>
+          <div
+            title="change theme"
+            className="theme-switch "
+            onClick={() => setDarkMood(!darkMood)}
+          >
+            <span
+              className={`shadow-lg  ${darkMood && "theme-switch-toggle"}`}
+            ></span>
+          </div>
         </div>
       </div>
       {/* navigation */}
-      <div className={`d-nav shadow-lg ${active && "d-nav-active"}`}>
+      <div
+        className={`d-nav  ${active && "d-nav-active"} ${
+          darkMood && "d-nav-dark"
+        }`}
+      >
         <div className="d-nav-top">
           <figure>
             <img
@@ -61,7 +84,7 @@ const Dashboard = () => {
             action={() => signOut(auth)}
             style={{
               background: "#f17732",
-              padding: "10px 0",
+              padding: "5px 0",
               marginTop: "1rem",
             }}
           >
@@ -71,7 +94,7 @@ const Dashboard = () => {
         </div>
       </div>
       {/* navigation */}
-      <div className="dashboard">
+      <div className={`dashboard ${darkMood && "dark-mood"} `}>
         <Outlet />
       </div>
     </>

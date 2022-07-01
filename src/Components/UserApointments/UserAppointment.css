@@ -1,24 +1,35 @@
+.appointment-body {
+  width: calc(100vw - 300px);
+  margin-left: auto;
+  overflow: scroll;
+  height: calc(100vh - 100px);
+  transition: all 0.3s linear;
+
+  /* background: #ececfa; */
+}
+
 .appointment-body table {
   width: 100%;
   overflow: hidden;
 }
-.appointment-body {
-  overflow: scroll;
-  height: calc(100vh - 150px);
+.width {
+  width: 100%;
 }
+
 table,
 th,
 td {
-  border: 1px solid #b2f0fb;
+  /* border: 1px solid #b2f0fb; */
   border-collapse: collapse;
   padding: 1rem;
 }
 
 thead th {
-  background-color: whitesmoke;
-  padding: 10px;
+  /* background-color: whitesmoke; */
+  /* padding: 10px; */
   text-transform: uppercase;
-  color: var(--primary-text);
+  /* color: var(--primary-text); */
+  color: #0d6efd;
   font-size: 15px;
 }
 tr:nth-child(even) {
@@ -30,7 +41,8 @@ table .time {
 }
 table td,
 .date {
-  color: var(--primary-text);
+  /* color: var(--primary-text); */
+  color: #0d6efd;
   font-weight: bold;
 }
 .d-massage {
@@ -46,4 +58,22 @@ table td,
   padding: 1rem 0;
   font-size: 20px;
   font-weight: bold;
+}
+
+@media screen and (max-width: 1199px) {
+  .appointment-body {
+    width: calc(100vw - 250px);
+  }
+}
+@media screen and (max-width: 999px) {
+  .appointment-body {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 670px) {
+  thead th,
+  td,
+  span {
+    font-size: 12px;
+  }
 }

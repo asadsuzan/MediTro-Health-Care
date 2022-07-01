@@ -9,6 +9,7 @@ import AuthenticationForm from "../Components/Authentication/AuthenticationForm"
 import Header from "../Components/Header/Header";
 import auth from "../firebaseConfig";
 import Loading from "../Components/Loading/Loading";
+import Footer from "../Components/Footer/Footer";
 
 const SignUp = () => {
   let navigate = useNavigate();
@@ -36,7 +37,12 @@ const SignUp = () => {
     <>
       <Header />
       {loading && <Loading />}
-      <AuthenticationForm action={handleSignup} error={error} />
+      <div style={{ marginTop: "120px" }}>
+        {" "}
+        <AuthenticationForm action={handleSignup} error={error} />
+      </div>
+
+      <Footer />
     </>
   );
 };

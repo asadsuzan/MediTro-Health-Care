@@ -1,5 +1,37 @@
+.dark-mood {
+  background-color: #202124 !important;
+}
+.theme-switch {
+  width: 100px;
+  height: 30px;
+  border: 1px solid #bbddff;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.theme-switch span {
+  width: 27px;
+  height: 27px;
+  background-color: #202124;
+  border-radius: 50%;
+
+  display: block;
+  transition: all 0.3s linear;
+}
+.theme-switch-toggle {
+  transform: translateX(70px);
+  transition: all 0.3s linear !important;
+  background-color: whitesmoke !important;
+}
+.dashboard {
+  width: 100%;
+  padding: 0 !important;
+  /* background-color: #202124; */
+  color: white !important;
+  transition: all 0.3s linear;
+}
 .dashboard-toggler {
-  background-color: #f8f9fa;
+  background: #ececfa;
+  /* background-color: #202124; */
   width: 100%;
   height: 100px;
   position: fixed;
@@ -9,6 +41,7 @@
 .dashboard-toggler button {
   border: none;
   background: transparent;
+  display: none;
 }
 
 .dashboard-toggler a,
@@ -24,17 +57,20 @@ span {
   font-size: 1.5rem !important;
 }
 .d-nav {
-  height: 100vh;
+  min-height: 100vh;
   width: 300px;
-  background: #ecfcff;
+  /* background: #ececfa; */
   position: fixed;
   top: 100px;
   left: 0;
-  transform: translateX(-100%);
   transition: all 0.4s linear;
+  background-color: #ececfa;
+}
+.d-nav-dark {
+  background-color: #202124;
 }
 .d-nav-active {
-  transform: translateX(0);
+  transform: translateX(-100%);
 }
 .dashboard {
   width: 100%;
@@ -42,9 +78,11 @@ span {
   margin-top: 50px;
   margin-top: 100px;
   padding: 2rem;
+  background-color: #ececfa;
 }
 .d-nav-top {
-  border-bottom: 1px solid #bbddff;
+  /* border-bottom: 1px solid #bbddff; */
+  border-bottom: 1px solid #ddd;
   text-align: center;
   margin: 1rem 0;
 }
@@ -71,10 +109,46 @@ span {
   gap: 20px;
 }
 .d-nav-links a {
-  border-bottom: 1px solid #bbddff;
+  /* border-bottom: 1px solid #bbddff; */
+  border-bottom: 1px solid #ddd;
   padding: 1rem;
-  font-size: 1.4rem;
+  font-size: 1rem;
 }
 .d-nav-links a b {
   margin-left: 5px;
+}
+
+@media screen and (max-width: 1199px) {
+  .d-nav {
+    width: 250px;
+  }
+}
+@media screen and (max-width: 999px) {
+  .d-nav {
+    width: 300px;
+    transform: translateX(-100%) !important;
+  }
+  .d-nav-active {
+    transform: translateX(0) !important;
+  }
+  .dashboard-toggler button {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .dashboard-toggler {
+    flex-direction: column !important;
+    padding: 10px 1rem;
+    height: 130px;
+  }
+  .theme-switch {
+    margin-left: auto;
+  }
+  .d-nav {
+    top: 130px;
+  }
+  .dashboard {
+    margin-top: 130px;
+  }
 }

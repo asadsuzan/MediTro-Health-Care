@@ -5,6 +5,7 @@ import {
 } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import AuthenticationForm from "../Components/Authentication/AuthenticationForm";
+import Footer from "../Components/Footer/Footer";
 
 import Header from "../Components/Header/Header";
 import Loading from "../Components/Loading/Loading";
@@ -36,7 +37,11 @@ const Login = () => {
     <>
       <Header />
       {loading && <Loading />}
-      <AuthenticationForm action={handleLogin} error={error} />
+      <div style={{ marginTop: "120px" }}>
+        {" "}
+        <AuthenticationForm action={handleLogin} error={error} />
+      </div>
+      <Footer />
     </>
   );
 };

@@ -20,13 +20,13 @@ function Header() {
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      window.scrollY > 100 ? setSticky(true) : setSticky(false);
+      return window.scrollY > 100 ? setSticky(true) : setSticky(false);
     });
   }, []);
 
   return (
     <>
-      <div className="header-divider"></div>
+      {/* <div className="header-divider"></div> */}
       <Navbar
         expand="lg"
         className={`primary-header bg-light fixed-top ${

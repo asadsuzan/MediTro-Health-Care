@@ -1,12 +1,17 @@
 import React from "react";
 import AboutUs from "../../Components/AboutUs/AboutUs";
+import Footer from "../../Components/Footer/Footer";
 import Header from "../../Components/Header/Header";
 
 const About = () => {
   return (
     <>
       <Header />
-      <AboutUs />
+      <div className="about-page" style={{ marginTop: "100px" }}>
+        {" "}
+        <AboutUs />
+      </div>
+      <Footer />
     </>
   );
 };

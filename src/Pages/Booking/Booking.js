@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams, useNavigate } from "react-router-dom";
+import Footer from "../../Components/Footer/Footer";
 import Header from "../../Components/Header/Header";
 import { MyButtonLg } from "../../Components/MyButtons/MyButtons";
 import auth from "../../firebaseConfig";
@@ -54,12 +55,16 @@ const Booking = () => {
           navigate(`/invoice/${data.insertedId}`);
         }
       });
+    e.target.reset();
   };
 
   return (
     <>
       <Header />
-      <div className="booking-from-container section">
+      <div
+        className="booking-from-container section"
+        style={{ marginTop: "120px" }}
+      >
         <div className="container">
           <div className="row justify-content-center align-items-center gy-5">
             {/* left side for form */}
@@ -72,7 +77,9 @@ const Booking = () => {
                     <input
                       required
                       type="text"
-                      placeholder={user.displayName}
+                      value={user?.displayName}
+                      readOnly
+                      disabled
                       name="name"
                     />
                   </div>
@@ -162,10 +169,10 @@ const Booking = () => {
                   </div>
 
                   <div className="text-end">
-                    <p className={!date && "text-danger"}>
+                    <p className={`${date ? "" : "text-danger"}`}>
                       {date ? date : "N/A"}
                     </p>
-                    <p className={!time && "text-danger"}>
+                    <p className={`${time ? "" : "text-danger"}`}>
                       {time ? time : "N/A"}
                     </p>
                     <p>${service.bookingFee}</p>
@@ -184,6 +191,7 @@ const Booking = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
