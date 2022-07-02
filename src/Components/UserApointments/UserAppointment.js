@@ -16,7 +16,12 @@ const UserAppointment = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/my_appointment/${user?.email}`)
+    fetch(`http://localhost:5000/my_appointment/${user?.email}`, {
+      method: "GET",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
         setAppointment(data);

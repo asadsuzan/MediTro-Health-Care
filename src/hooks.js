@@ -43,5 +43,32 @@ const UseService = (id) => {
 
   return [service, setService];
 };
+const UseToken = (user) => {
+  const [token, setToken] = useState();
 
-export { UseServices, UseDoctors, UseFacilities, UseService };
+  useEffect(() => {
+    const email = user?.user?.email;
+    const newUser = { email: email };
+    const url = `http://localhost:5000/login/${email}`;
+
+    if (email) {
+      fetch(url, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newUser),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          localStorage.setItem("accessToken", data.token);
+          console.log(data.token);
+          setToken(data);
+        });
+    }
+  }, [user]);
+
+  return [token, setToken];
+};
+
+export { UseServices, UseDoctors, UseFacilities, UseService, UseToken };

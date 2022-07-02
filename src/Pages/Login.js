@@ -10,6 +10,7 @@ import Footer from "../Components/Footer/Footer";
 import Header from "../Components/Header/Header";
 import Loading from "../Components/Loading/Loading";
 import auth from "../firebaseConfig";
+import { UseToken } from "../hooks";
 
 const Login = () => {
   let navigate = useNavigate();
@@ -20,6 +21,7 @@ const Login = () => {
 
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+  const [token] = UseToken(user);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -29,9 +31,9 @@ const Login = () => {
     e.target.reset();
   };
 
-  if (VerifiedUser) {
-    navigate(from, { replace: true });
-  }
+  // if (VerifiedUser) {
+  //   navigate(from, { replace: true });
+  // }
 
   return (
     <>
