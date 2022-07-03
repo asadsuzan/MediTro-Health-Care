@@ -1,0 +1,24 @@
+.users-body {
+  width: calc(100vw - 300px);
+  margin-left: auto;
+  overflow: scroll;
+  height: calc(100vh - 100px);
+  transition: all 0.3s linear;
+}
+.users-body table {
+  width: 100%;
+  overflow: hidden;
+}
+/* .users-body td {
+  color: var(--hover-text);
+} */
+@media screen and (max-width: 1199px) {
+  .users-body {
+    width: calc(100vw - 250px);
+  }
+}
+@media screen and (max-width: 999px) {
+  .users-body {
+    width: 100%;
+  }
+}

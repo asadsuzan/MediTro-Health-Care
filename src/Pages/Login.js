@@ -31,9 +31,9 @@ const Login = () => {
     e.target.reset();
   };
 
-  // if (VerifiedUser) {
-  //   navigate(from, { replace: true });
-  // }
+  if (token) {
+    navigate(from, { replace: true });
+  }
 
   return (
     <>

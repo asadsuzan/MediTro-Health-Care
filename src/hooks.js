@@ -71,4 +71,33 @@ const UseToken = (user) => {
   return [token, setToken];
 };
 
-export { UseServices, UseDoctors, UseFacilities, UseService, UseToken };
+const UseAdmin = (user) => {
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    const url = `http://localhost:5000/isAdmin/${user?.email}`;
+
+    fetch(url, {
+      method: "GET",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setIsAdmin(data.isAdmin);
+        setIsLoading(false);
+      });
+  }, [user]);
+
+  return [isAdmin, isLoading];
+};
+
+export {
+  UseServices,
+  UseDoctors,
+  UseFacilities,
+  UseService,
+  UseToken,
+  UseAdmin,
+};

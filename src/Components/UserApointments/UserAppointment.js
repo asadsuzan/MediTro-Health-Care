@@ -50,7 +50,9 @@ const UserAppointment = () => {
             {appointment?.map((data, index) => {
               return (
                 <tr key={index}>
-                  <td>{data.serviceName}</td>
+                  <td className="text-dark text-capitalize">
+                    {data.serviceName}
+                  </td>
                   <td>
                     <span className="time">{data.appointmentTime}</span> <br />
                     <span className="date">{data.appointmentDate}</span>

@@ -13,6 +13,8 @@ import Dashboard from "./Pages/Dashboard/Dashboard";
 import UserProfile from "./Components/UserProfile/UserProfile";
 import UserAppointment from "./Components/UserApointments/UserAppointment";
 import Invoice from "./Pages/Invoice/Invoice";
+import AllUser from "./Components/AllUser/AllUser";
+import RequieAdmin from "./Pages/RequieAdmin";
 
 function App() {
   return (
@@ -55,6 +57,14 @@ function App() {
               <RequireAuth>
                 <UserProfile />
               </RequireAuth>
+            }
+          />
+          <Route
+            path="users"
+            element={
+              <RequieAdmin>
+                <AllUser />
+              </RequieAdmin>
             }
           />
           <Route

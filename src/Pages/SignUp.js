@@ -32,9 +32,9 @@ const SignUp = () => {
     await updateProfile({ displayName: name });
     e.target.reset();
   };
-  // if (VerifiedUser || user) {
-  //   navigate(from, { replace: true });
-  // }
+  if (token) {
+    navigate(from, { replace: true });
+  }
   return (
     <>
       <Header />

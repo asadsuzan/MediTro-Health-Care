@@ -86,7 +86,10 @@ function Header() {
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
                   <MyButtonLg
-                    action={() => signOut(auth)}
+                    action={() => {
+                      signOut(auth);
+                      localStorage.removeItem("accessToken");
+                    }}
                     className={"header-btn"}
                     style={{
                       width: "100%",

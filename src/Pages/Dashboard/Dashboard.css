@@ -26,7 +26,7 @@
   width: 100%;
   padding: 0 !important;
   /* background-color: #202124; */
-  color: white !important;
+  /* color: white !important;v */
   transition: all 0.3s linear;
 }
 .dashboard-toggler {

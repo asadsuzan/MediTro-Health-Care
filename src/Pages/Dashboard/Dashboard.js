@@ -12,9 +12,11 @@ import { FiLogOut } from "react-icons/fi";
 import { useState } from "react";
 import userThumb from "../../assets/about-img/about1.jpg";
 import { signOut } from "firebase/auth";
+import { UseAdmin } from "../../hooks";
 
 const Dashboard = () => {
   const [user] = useAuthState(auth);
+  const [isAdmin, isLoading] = UseAdmin(user);
   const [active, setActive] = useState(false);
   const [darkMood, setDarkMood] = useState(false);
   const { pathname } = useLocation();
@@ -80,8 +82,17 @@ const Dashboard = () => {
             <MdDashboard />
             <b>Appointment</b>
           </NavLink>
+          {isAdmin && (
+            <NavLink to={"users"} onClick={() => setActive(false)}>
+              <MdDashboard />
+              <b>All Users</b>
+            </NavLink>
+          )}
           <MyButtonLg
-            action={() => signOut(auth)}
+            action={() => {
+              signOut(auth);
+              localStorage.removeItem("accessToken");
+            }}
             style={{
               background: "#f17732",
               padding: "5px 0",
