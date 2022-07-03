@@ -15,7 +15,7 @@ import { UseToken } from "../hooks";
 const Login = () => {
   let navigate = useNavigate();
   let location = useLocation();
-  let [VerifiedUser] = useAuthState(auth);
+  let [VerifiedUser, isLoading] = useAuthState(auth);
 
   let from = location.state?.from?.pathname || "/";
 
@@ -30,7 +30,9 @@ const Login = () => {
     await signInWithEmailAndPassword(email, password);
     e.target.reset();
   };
-
+  if (isLoading || loading) {
+    return <Loading />;
+  }
   if (token) {
     navigate(from, { replace: true });
   }

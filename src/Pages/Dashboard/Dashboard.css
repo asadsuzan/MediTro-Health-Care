@@ -65,6 +65,7 @@ span {
   left: 0;
   transition: all 0.4s linear;
   background-color: #ececfa;
+  z-index: 99999;
 }
 .d-nav-dark {
   background-color: #202124;

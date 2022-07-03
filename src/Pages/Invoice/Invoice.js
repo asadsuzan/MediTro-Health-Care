@@ -7,16 +7,24 @@ import { FcApproval } from "react-icons/fc";
 import "./Invoice.css";
 import Footer from "../../Components/Footer/Footer";
 import { MyButtonLg } from "../../Components/MyButtons/MyButtons";
+import Loading from "../../Components/Loading/Loading";
 const Invoice = () => {
   const { id } = useParams();
   const [invoice, setInvoice] = useState({});
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`http://localhost:5000/invoice/${id}`)
       .then((res) => res.json())
-      .then((data) => setInvoice(data));
+      .then((data) => {
+        setInvoice(data);
+        setLoading(false);
+      });
   }, [id]);
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <>
       <Header />

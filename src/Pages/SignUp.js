@@ -15,7 +15,7 @@ import { UseToken } from "../hooks";
 const SignUp = () => {
   let navigate = useNavigate();
   let location = useLocation();
-  let [VerifiedUser] = useAuthState(auth);
+  let [VerifiedUser, isLoading] = useAuthState(auth);
 
   let from = location.state?.from?.pathname || "/";
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -32,6 +32,9 @@ const SignUp = () => {
     await updateProfile({ displayName: name });
     e.target.reset();
   };
+  if (isLoading || loading) {
+    return <Loading />;
+  }
   if (token) {
     navigate(from, { replace: true });
   }
@@ -39,7 +42,9 @@ const SignUp = () => {
     <>
       <Header />
       {loading && <Loading />}
-      <AuthenticationForm action={handleSignup} error={error} />
+      <div style={{ marginTop: "120px" }}>
+        <AuthenticationForm action={handleSignup} error={error} />
+      </div>
       <Footer />
     </>
   );
