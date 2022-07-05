@@ -45,30 +45,37 @@ const UseService = (id) => {
 };
 const UseToken = (user) => {
   const [token, setToken] = useState();
+  const [waiting, setWaiting] = useState(true);
 
   useEffect(() => {
     const email = user?.user?.email;
-    const newUser = { email: email };
     const url = `http://localhost:5000/login/${email}`;
+    const postData = async () => {
+      if (email) {
+        const userName = await user?.user?.displayName;
+        const newUser = { userName: userName, email: email };
 
-    if (email) {
-      fetch(url, {
-        method: "PUT",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(newUser),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          localStorage.setItem("accessToken", data.token);
+        await fetch(url, {
+          method: "PUT",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(newUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            localStorage.setItem("accessToken", data.token);
 
-          setToken(data);
-        });
-    }
+            setToken(data);
+            setWaiting(false);
+          });
+      }
+    };
+
+    postData();
   }, [user]);
 
-  return [token, setToken];
+  return [token, waiting];
 };
 
 const UseAdmin = (user) => {

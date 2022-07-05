@@ -40,6 +40,7 @@ const Booking = () => {
       amount: +service.bookingFee + service.consultingFee,
       serviceId: id,
       serviceName: service.name,
+      stage: "pending",
     };
     // console.log(bookingInfo);
     fetch("http://localhost:5000/appointment", {

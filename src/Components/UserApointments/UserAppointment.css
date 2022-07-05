@@ -1,5 +1,5 @@
 .appointment-body {
-  width: calc(100vw - 300px);
+  width: calc(100vw - 200px);
   margin-left: auto;
   overflow: scroll;
   height: calc(100vh - 100px);
@@ -15,7 +15,21 @@
 /* .width {
   width: 100%;
 } */
-
+.td-container {
+  position: relative;
+}
+.td-container:hover .td-item {
+  display: block;
+}
+.td-item {
+  height: auto;
+  width: auto;
+  padding: 1rem;
+  /* background-color: ; */
+  position: absolute;
+  display: none;
+  z-index: 999999;
+}
 table,
 th,
 td {

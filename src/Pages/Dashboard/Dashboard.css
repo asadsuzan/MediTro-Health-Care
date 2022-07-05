@@ -29,6 +29,7 @@
   /* color: white !important;v */
   transition: all 0.3s linear;
 }
+
 .dashboard-toggler {
   background: #ececfa;
   /* background-color: #202124; */
@@ -58,7 +59,7 @@ span {
 }
 .d-nav {
   min-height: 100vh;
-  width: 300px;
+  width: 200px;
   /* background: #ececfa; */
   position: fixed;
   top: 100px;
