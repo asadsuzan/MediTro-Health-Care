@@ -9,6 +9,7 @@ import Loading from "../Loading/Loading";
 import { MyButtonLg } from "../MyButtons/MyButtons";
 import { useNavigate } from "react-router-dom";
 import { async } from "@firebase/util";
+import { MdDeleteForever } from "react-icons/md";
 
 const UserAppointment = () => {
   const [appointment, setAppointment] = useState([]);
@@ -69,6 +70,17 @@ const UserAppointment = () => {
       .then((data) => loadAppointments(user));
   };
 
+  // delete appointment for admin
+  const deleteAppointment = (id) => {
+    console.log(id);
+    const url = `http://localhost:5000/appointments/${id}`;
+    fetch(url, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => loadAppointments(user));
+  };
+
   if (loading) {
     return <Loading></Loading>;
   }
@@ -124,6 +136,7 @@ const UserAppointment = () => {
                       <select
                         title="change status"
                         onChange={(e) => changStatus(e, data)}
+                        className="select-tab"
                       >
                         <option selected disabled hidden>
                           status
@@ -132,8 +145,13 @@ const UserAppointment = () => {
                         <option value="complete">completed</option>
                         <option value="pending">pending</option>
                       </select>{" "}
-                      {/* <br />
-                      <button>xxx</button> <br /> <button>xxxx</button> */}
+                      <br />
+                      <button
+                        onClick={() => deleteAppointment(data?._id)}
+                        className="remover-btn"
+                      >
+                        <MdDeleteForever />
+                      </button>
                     </td>
                   )}
                 </tr>

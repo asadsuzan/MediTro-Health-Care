@@ -12,9 +12,22 @@
   width: 100%;
   overflow: hidden;
 }
-/* .width {
+.remover-btn {
+  background-color: white;
+  border: none;
+  outline: none;
   width: 100%;
-} */
+  border-radius: 10px;
+  margin-top: 10px;
+  color: red;
+  font-size: 1.3rem;
+}
+.select-tab {
+  padding: 5px;
+}
+.select-tab option {
+  background-color: transparent;
+}
 .td-container {
   position: relative;
 }
