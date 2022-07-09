@@ -65,11 +65,15 @@ const Dashboard = () => {
       >
         <div className="d-nav-top">
           <figure>
-            <img
-              src={userThumb}
-              alt={user?.displayName}
-              className="img-fluid"
-            />
+            {user?.photoURL ? (
+              <img
+                src={user?.photoURL}
+                alt={user?.displayName}
+                className="img-fluid"
+              />
+            ) : (
+              <div className="">{user?.displayName.slice(0, 1)}</div>
+            )}
           </figure>
           <p>{user?.displayName}</p>
         </div>

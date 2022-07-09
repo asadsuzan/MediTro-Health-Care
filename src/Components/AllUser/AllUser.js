@@ -5,12 +5,31 @@ import auth from "../../firebaseConfig";
 import { useAuthState } from "react-firebase-hooks/auth";
 import "./AllUser.css";
 import Loading from "../Loading/Loading";
+import { MdDeleteForever } from "react-icons/md";
 
 const AllUser = () => {
   const [users, setUsers] = useState([]);
   const [user] = useAuthState(auth);
   const [loading, setLoading] = useState(true);
+
+  // useEffect(() => {
+  //   fetch(`http://localhost:5000/users/${user?.email}`, {
+  //     method: "GET",
+  //     headers: {
+  //       authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+  //     },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setUsers(data);
+  //       setLoading(false);
+  //     });
+  // }, [user]);
   useEffect(() => {
+    laodUsers(user);
+  }, [user]);
+
+  const laodUsers = (user) => {
     fetch(`http://localhost:5000/users/${user?.email}`, {
       method: "GET",
       headers: {
@@ -22,7 +41,24 @@ const AllUser = () => {
         setUsers(data);
         setLoading(false);
       });
-  }, [user]);
+  };
+
+  const removeUser = (email) => {
+    const url = `http://localhost:5000/user/${email}`;
+    const isConfirm = window.confirm(
+      `This will remove user and each appointment of this current user. Are you sure?`
+    );
+    if (isConfirm) {
+      fetch(url, {
+        method: "DELETE",
+        headers: {
+          authorization: `Barer ${localStorage.getItem("accessToken")}`,
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => laodUsers(user));
+    }
+  };
   if (loading) {
     return <Loading />;
   }
@@ -50,7 +86,19 @@ const AllUser = () => {
                   </td>
                   <td className="text-dark">{email}</td>
                   <td className="text-success">{role ? role : "user"}</td>
-                  <td className="text-danger">{role ? "" : "remove user"}</td>
+                  <td className="text-danger">
+                    {role ? (
+                      ""
+                    ) : (
+                      <button
+                        onClick={() => removeUser(email)}
+                        title="remove"
+                        className="remover-btn bg-transparent "
+                      >
+                        <MdDeleteForever />
+                      </button>
+                    )}
+                  </td>
                 </tr>
               );
             })}

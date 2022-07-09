@@ -4,11 +4,11 @@ import "./UserAppointment.css";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useEffect } from "react";
 import auth from "../../firebaseConfig";
-import { UseAdmin, UseService } from "../../hooks";
+import { UseAdmin } from "../../hooks";
 import Loading from "../Loading/Loading";
 import { MyButtonLg } from "../MyButtons/MyButtons";
 import { useNavigate } from "react-router-dom";
-import { async } from "@firebase/util";
+
 import { MdDeleteForever } from "react-icons/md";
 
 const UserAppointment = () => {
@@ -57,13 +57,15 @@ const UserAppointment = () => {
 
   // delete appointment for admin
   const deleteAppointment = (id) => {
-    console.log(id);
+    const isConfirm = window.confirm("Want To Remove ?");
     const url = `http://localhost:5000/appointments/${id}`;
-    fetch(url, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => loadAppointments(user));
+    if (isConfirm) {
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => loadAppointments(user));
+    }
   };
 
   if (loading) {
@@ -74,6 +76,7 @@ const UserAppointment = () => {
     <div className="appointment-body">
       {appointment.length ? (
         <>
+          {/* filtering tab */}
           <div className="text-light d-flex fixed">
             {isAdmin && (
               <input
