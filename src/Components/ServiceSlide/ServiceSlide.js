@@ -17,12 +17,13 @@ import { UseServices } from "../../hooks";
 import { MyButtonLg } from "../MyButtons/MyButtons";
 import { useNavigate } from "react-router-dom";
 import "./ServiceSlide.css";
+import { OverlayBg3, OverlayBg7, OverlayBg8 } from "../OverlayBg/OverlayBg";
 
 const ServiceSlide = () => {
   const [services] = UseServices();
   const navigate = useNavigate();
   return (
-    <div className="service-slide">
+    <div className="service-slide position-relative">
       <div className="container service-slide-inner">
         <SectionTitle style={{ textAlign: "center" }}>
           <h6>Services</h6>
@@ -121,6 +122,9 @@ const ServiceSlide = () => {
           </Swiper>
         </div>
       </div>
+      <OverlayBg3 style={{ top: "0%", right: "0%" }} />
+      <OverlayBg7 style={{ top: "0%", left: "0%" }} />
+      <OverlayBg8 style={{ bottom: "-10%", left: "50%" }} />
     </div>
   );
 };

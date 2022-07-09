@@ -1,11 +1,12 @@
 import React from "react";
 import { MyButtonLg } from "../MyButtons/MyButtons";
+import { OverlayBg2, OverlayBg3, OverlayBg7 } from "../OverlayBg/OverlayBg";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import "./WorkProcess.css";
 
 const WorkProcess = () => {
   return (
-    <div className="WorkProcess">
+    <div className="WorkProcess position-relative">
       <div className="container">
         <SectionTitle style={{ textAlign: "center" }}>
           <h6>Working Process</h6>
@@ -74,6 +75,10 @@ const WorkProcess = () => {
           </div>
         </div>
       </div>
+      {/* for overlay background */}
+      <OverlayBg3 style={{ top: "20%", right: "5%" }} />
+      <OverlayBg7 style={{ top: "15%", right: "50%" }} />
+      <OverlayBg2 style={{ bottom: "0", left: "5%" }} />
     </div>
   );
 };

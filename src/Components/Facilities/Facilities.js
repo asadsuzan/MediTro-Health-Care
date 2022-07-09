@@ -3,12 +3,13 @@ import React from "react";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import facilityThumb from "../../assets/facilities/f.png";
 import "./Facilities.css";
+import { OverlayBg1, OverlayBg2, OverlayBg6 } from "../OverlayBg/OverlayBg";
 
 const Facilities = () => {
   const [facilities] = UseFacilities();
 
   return (
-    <div className="facilities">
+    <div className="facilities position-relative">
       <div className="container">
         <div className="row align-items-center gy-5">
           {/* left side */}
@@ -45,6 +46,9 @@ const Facilities = () => {
           </div>
         </div>
       </div>
+      <OverlayBg1 style={{ bottom: "-10%", right: "0%" }} />
+      <OverlayBg2 style={{ bottom: "-10%", left: "0%" }} />
+      <OverlayBg6 style={{ top: "48%", left: "50%" }} />
     </div>
   );
 };

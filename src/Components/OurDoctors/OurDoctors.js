@@ -7,6 +7,7 @@ import { FaMoneyBillAlt } from "react-icons/fa";
 import "./OurDoctors.css";
 import { MyButtonLg } from "../MyButtons/MyButtons";
 import SectionTitle from "../SectionTitle/SectionTitle";
+import { OverlayBg1, OverlayBg6, OverlayBg8 } from "../OverlayBg/OverlayBg";
 
 const OurDoctors = () => {
   const [doctors] = UseDoctors();
@@ -33,7 +34,7 @@ const OurDoctors = () => {
   }, [doctors]);
 
   return (
-    <div className="our-doctors">
+    <div className="our-doctors position-relative">
       <div className="container">
         <SectionTitle style={{ textAlign: "center" }}>
           <h6>our doctors</h6>
@@ -97,6 +98,9 @@ const OurDoctors = () => {
           })}
         </div>
       </div>
+      <OverlayBg1 style={{ bottom: "-10%", right: "0%" }} />
+      <OverlayBg8 style={{ bottom: "-10%", left: "0%" }} />
+      <OverlayBg6 style={{ top: "48%", left: "50%" }} />
     </div>
   );
 };
