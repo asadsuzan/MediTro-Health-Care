@@ -27,7 +27,7 @@ const ServiceCard = () => {
             const { name, description, thumb, consultingFee, bookingFee, _id } =
               service;
             return (
-              <div key={_id} className="service-item shadow-sm">
+              <div key={_id} className="service-item shadow-lg">
                 <figure>
                   <img src={thumb} alt="service-icon" className="img-fluid" />
                 </figure>
