@@ -2,10 +2,10 @@
   background-color: #202124 !important;
 }
 .theme-switch {
-  width: 100px;
+  /* width: 100px;
   height: 30px;
   border: 1px solid #bbddff;
-  border-radius: 20px;
+  border-radius: 20px; */
   cursor: pointer;
 }
 .theme-switch span {
@@ -38,6 +38,9 @@
   position: fixed;
   top: 0;
   padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .dashboard-toggler button {
   border: none;
@@ -153,7 +156,7 @@ span {
 
 @media screen and (max-width: 520px) {
   .dashboard-toggler {
-    flex-direction: column !important;
+    /* flex-direction: column !important; */
     padding: 10px 1rem;
     height: 130px;
   }

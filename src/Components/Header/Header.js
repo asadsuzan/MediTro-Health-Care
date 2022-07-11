@@ -29,8 +29,8 @@ function Header() {
       {/* <div className="header-divider"></div> */}
       <Navbar
         expand="lg"
-        className={`primary-header bg-light fixed-top ${
-          sticky && "shadow-sm bg-light"
+        className={`primary-header  fixed-top ${
+          sticky ? "shadow-sm bg-light" : "bg-transparent"
         }`}
       >
         <Container>
@@ -77,14 +77,9 @@ function Header() {
 
               {user ? (
                 <NavDropdown title={user?.displayName} id="basic-nav-dropdown">
-                  <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">
-                    Another action
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3">
-                    Something
-                  </NavDropdown.Item>
-                  <NavDropdown.Divider />
+                  <NavLink to={"/dashboard/profile"}>profile</NavLink>
+                  <NavLink to={"/dashboard/my_Appointments"}>dashboard</NavLink>
+                  {/* <NavDropdown.Divider /> */}
                   <MyButtonLg
                     action={() => {
                       signOut(auth);

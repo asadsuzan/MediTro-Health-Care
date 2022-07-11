@@ -1,0 +1,33 @@
+.banner {
+  margin-top: 100px;
+  min-height: 200px;
+
+  background: url(../../assets/hero-img/banner.jpg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  z-index: 1;
+}
+.banner h3 {
+  color: var(--primary-text);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-size: 2em;
+  font-weight: 900;
+  font-style: italic;
+}
+.path-tab {
+  background: #565acf;
+  height: 50px;
+  width: 200px;
+  margin: 0 auto;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  gap: 4px;
+  font-size: 1em;
+  font-weight: 800;
+}

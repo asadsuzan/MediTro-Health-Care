@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams, useNavigate } from "react-router-dom";
+import Banner from "../../Components/Banner/Banner";
 import Footer from "../../Components/Footer/Footer";
 import Header from "../../Components/Header/Header";
 import { MyButtonLg } from "../../Components/MyButtons/MyButtons";
@@ -62,6 +63,7 @@ const Booking = () => {
   return (
     <>
       <Header />
+      <Banner page={"BOOK NOW"} />
       <div
         className="booking-from-container section"
         style={{ marginTop: "120px" }}

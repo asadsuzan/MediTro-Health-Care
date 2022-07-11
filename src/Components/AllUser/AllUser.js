@@ -67,6 +67,7 @@ const AllUser = () => {
       {users.length ? (
         <table>
           <thead className="shadow-sm">
+            <th> #</th>
             <th> name</th>
             <th> id</th>
             <th> email</th>
@@ -74,10 +75,11 @@ const AllUser = () => {
             <th>Actions</th>
           </thead>
           <tbody>
-            {users.map((user) => {
+            {users.map((user, index) => {
               const { email, _id, userName, role } = user;
               return (
                 <tr key={_id}>
+                  <td>{index + 1}</td>
                   <td className="text-dark text-capitalize">
                     {userName?.split(" ")[0]}
                   </td>

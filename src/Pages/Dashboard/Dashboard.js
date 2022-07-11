@@ -8,6 +8,8 @@ import { CgProfile } from "react-icons/cg";
 import { MdDashboard } from "react-icons/md";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
+import { MdDarkMode } from "react-icons/md";
+import { CgDarkMode } from "react-icons/cg";
 import { FiLogOut } from "react-icons/fi";
 import { useState } from "react";
 import userThumb from "../../assets/about-img/about1.jpg";
@@ -23,11 +25,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <div
-        className={`dashboard-toggler d-flex justify-content-between align-items-center ${
-          darkMood && "dark-mood"
-        }`}
-      >
+      <div className={`dashboard-toggler ${darkMood && "dark-mood"}`}>
         <div className="d-flex ">
           {" "}
           <button onClick={() => setActive(!active)}>
@@ -51,9 +49,10 @@ const Dashboard = () => {
             className="theme-switch "
             onClick={() => setDarkMood(!darkMood)}
           >
-            <span
+            {/* <span
               className={`shadow-lg  ${darkMood && "theme-switch-toggle"}`}
-            ></span>
+            ></span> */}
+            <CgDarkMode color={darkMood ? "white" : "black"} size={"2rem"} />
           </div>
         </div>
       </div>
