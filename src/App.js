@@ -15,6 +15,9 @@ import UserAppointment from "./Components/UserApointments/UserAppointment";
 import Invoice from "./Pages/Invoice/Invoice";
 import AllUser from "./Components/AllUser/AllUser";
 import RequieAdmin from "./Pages/RequieAdmin";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Blog from "./Pages/Blog/Blog";
 
 function App() {
   return (
@@ -76,7 +79,9 @@ function App() {
             }
           />
         </Route>
+        <Route path="/blog" element={<Blog />} />
       </Routes>
+      <ToastContainer />
       {/* <Footer /> */}
     </>
   );

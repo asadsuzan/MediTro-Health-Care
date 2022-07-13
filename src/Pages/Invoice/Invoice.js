@@ -8,6 +8,7 @@ import "./Invoice.css";
 import Footer from "../../Components/Footer/Footer";
 import { MyButtonLg } from "../../Components/MyButtons/MyButtons";
 import Loading from "../../Components/Loading/Loading";
+import { toast } from "react-toastify";
 const Invoice = () => {
   const { id } = useParams();
   const [invoice, setInvoice] = useState({});
@@ -20,6 +21,10 @@ const Invoice = () => {
       .then((data) => {
         setInvoice(data);
         setLoading(false);
+        toast.success("Thank You", {
+          theme: "dark",
+          position: toast.POSITION.BOTTOM_CENTER,
+        });
       });
   }, [id]);
   if (loading) {

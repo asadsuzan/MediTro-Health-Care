@@ -4,32 +4,41 @@ import Footer from "../../Components/Footer/Footer";
 import Header from "../../Components/Header/Header";
 import { GoLocation } from "react-icons/go";
 import { MdContactMail } from "react-icons/md";
+import { toast } from "react-toastify";
 
 import "./ContactUs.css";
 
 const ContactUs = () => {
+  const handleSendMsg = (e) => {
+    e.preventDefault();
+    toast.success("Message Send !", {
+      position: toast.POSITION.BOTTOM_CENTER,
+    });
+    e.target.reset();
+  };
+
   return (
     <>
       <Header />
       <Banner page={"contact us"} />
       <div className="container mt-5 section contact-section shadow-lg bg-light">
         <div className="contact-form ">
-          <form action="">
+          <form onSubmit={handleSendMsg}>
             <div className="c-group">
               <label htmlFor="name">name</label>
-              <input type="text" name="name" />
+              <input required type="text" name="name" />
             </div>
             <div className="c-group">
               <label htmlFor="email">email</label>
-              <input type="email" name="email" />
+              <input required type="email" name="email" />
             </div>
             <div className="c-group">
               <label htmlFor="sub">subject</label>
-              <input type="text" name="sub" />
+              <input required type="text" name="sub" />
             </div>
             <div className="c-group">
               <label htmlFor="msg">message</label>
-              <textarea name="" id="" cols="30" rows="10"></textarea>
+              <textarea required name="" id="" cols="30" rows="10"></textarea>
             </div>
             <input type="submit" value={"SEND"} className="msg-btn" />
           </form>

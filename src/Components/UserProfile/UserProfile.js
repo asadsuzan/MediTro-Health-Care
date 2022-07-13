@@ -5,7 +5,8 @@ import { useState } from "react";
 import { useAuthState, useUpdateProfile } from "react-firebase-hooks/auth";
 import auth from "../../firebaseConfig";
 import "./UserProfile.css";
-import { getStorage, ref, uploadBytes } from "firebase/storage";
+import { toast } from "react-toastify";
+import { TiEdit } from "react-icons/ti";
 
 const UserProfile = () => {
   const [user] = useAuthState(auth);
@@ -17,6 +18,7 @@ const UserProfile = () => {
   const [zipCode, setZipCode] = useState("");
   const [textType, setTextType] = useState("text");
   const [selectType, setSelectType] = useState(true);
+  const [disabled, setDisabled] = useState(true);
 
   const getData = (email) => {
     const url = `http://localhost:5000/profile/${email}`;
@@ -49,12 +51,14 @@ const UserProfile = () => {
       body: JSON.stringify(updatedData),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        toast("SAVED");
+      });
   };
 
   return (
     <div className="appointment-body profile-body">
-      <div className="p-photo">
+      <div className="p-photo d-flex justify-content-between align-items-center">
         <figure>
           {user?.photoURL ? (
             <img
@@ -66,6 +70,13 @@ const UserProfile = () => {
             <div className="p-alt">nai</div>
           )}
         </figure>
+        <div
+          className="edit-btn"
+          onClick={() => setDisabled(!disabled)}
+          style={{ cursor: "pointer" }}
+        >
+          <TiEdit size={"2rem"} color="#b12ef7" />
+        </div>
       </div>
       {/* user info */}
       <div>
@@ -103,6 +114,7 @@ const UserProfile = () => {
               onBlur={() => setTextType("text")}
               value={birthDay && birthDay}
               onChange={(e) => setBirthDay(e.target.value)}
+              disabled={disabled}
             />
           </div>
           <div
@@ -118,12 +130,14 @@ const UserProfile = () => {
                 value={bloodGroup && bloodGroup}
                 onChange={(e) => setBloodGroup(e.target.value)}
                 autoComplete="off"
+                disabled={disabled}
               />
             ) : (
               <select
                 name="bGroup"
                 type="text"
                 onChange={(e) => setBloodGroup(e.target.value)}
+                disabled={disabled}
               >
                 <option value="a-">a-</option>
                 <option value="a+">a+</option>
@@ -143,6 +157,7 @@ const UserProfile = () => {
               name="city"
               autoComplete="off"
               value={city && city}
+              disabled={disabled}
               onChange={(e) => setCity(e.target.value)}
             />
           </div>
@@ -153,6 +168,7 @@ const UserProfile = () => {
               name="state"
               autoComplete="off"
               value={state && state}
+              disabled={disabled}
               onChange={(e) => setState(e.target.value)}
             />
           </div>
@@ -163,6 +179,7 @@ const UserProfile = () => {
               name="country"
               autoComplete="off"
               value={country && country}
+              disabled={disabled}
               onChange={(e) => setCountry(e.target.value)}
             />
           </div>
@@ -172,14 +189,17 @@ const UserProfile = () => {
               type="text"
               name="zip"
               value={zipCode && zipCode}
+              disabled={disabled}
               onChange={(e) => setZipCode(e.target.value)}
             />
           </div>
           <div className="info-group">
-            <label htmlFor="submit" style={{ opacity: "0" }}>
-              xxxx
-            </label>
-            <input type="submit" value={"SAVE"} className="submit" />
+            <input
+              disabled={disabled}
+              type="submit"
+              value={"SAVE"}
+              className="submit"
+            />
           </div>
         </form>
       </div>

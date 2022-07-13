@@ -8,7 +8,7 @@ import { UseAdmin } from "../../hooks";
 import Loading from "../Loading/Loading";
 import { MyButtonLg } from "../MyButtons/MyButtons";
 import { useNavigate } from "react-router-dom";
-
+import { toast } from "react-toastify";
 import { MdDeleteForever } from "react-icons/md";
 
 const UserAppointment = () => {
@@ -52,7 +52,18 @@ const UserAppointment = () => {
       body: JSON.stringify({ stage: stage }),
     })
       .then((res) => res.json())
-      .then((data) => loadAppointments(user));
+      .then((data) => {
+        loadAppointments(user);
+        if (stage === "complete") {
+          toast.success(`Set as complete`, {
+            position: toast.POSITION.BOTTOM_CENTER,
+          });
+        } else {
+          toast.warn(`Set as Pending`, {
+            position: toast.POSITION.BOTTOM_CENTER,
+          });
+        }
+      });
   };
 
   // delete appointment for admin
@@ -64,7 +75,12 @@ const UserAppointment = () => {
         method: "DELETE",
       })
         .then((res) => res.json())
-        .then((data) => loadAppointments(user));
+        .then((data) => {
+          loadAppointments(user);
+          toast.info("Removed !", {
+            position: toast.POSITION.BOTTOM_CENTER,
+          });
+        });
     }
   };
 
