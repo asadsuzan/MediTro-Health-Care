@@ -16,7 +16,7 @@ const Invoice = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/invoice/${id}`)
+    fetch(`https://meditro.herokuapp.com/invoice/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setInvoice(data);

@@ -21,7 +21,7 @@ const UserProfile = () => {
   const [disabled, setDisabled] = useState(true);
 
   const getData = (email) => {
-    const url = `http://localhost:5000/profile/${email}`;
+    const url = `https://meditro.herokuapp.com/profile/${email}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -42,7 +42,7 @@ const UserProfile = () => {
 
     const updatedData = { birthDay, city, country, zipCode, bloodGroup, state };
 
-    const url = `http://localhost:5000/profile/${user?.email}`;
+    const url = `https://meditro.herokuapp.com/profile/${user?.email}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -52,12 +52,13 @@ const UserProfile = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        setDisabled(true);
         toast("SAVED");
       });
   };
 
   return (
-    <div className="appointment-body profile-body">
+    <div className="appointment-body profile-body  ">
       <div className="p-photo d-flex justify-content-between align-items-center">
         <figure>
           {user?.photoURL ? (
@@ -67,10 +68,11 @@ const UserProfile = () => {
               className="img fluid"
             />
           ) : (
-            <div className="p-alt">nai</div>
+            <div className="p-alt text-success fs-1">{user?.displayName}</div>
           )}
         </figure>
         <div
+          title="Edit Info"
           className="edit-btn"
           onClick={() => setDisabled(!disabled)}
           style={{ cursor: "pointer" }}
@@ -198,7 +200,7 @@ const UserProfile = () => {
               disabled={disabled}
               type="submit"
               value={"SAVE"}
-              className="submit"
+              className={`submit ${disabled && "bg-transparent text-dark"}`}
             />
           </div>
         </form>

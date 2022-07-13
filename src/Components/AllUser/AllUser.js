@@ -13,7 +13,7 @@ const AllUser = () => {
   const [loading, setLoading] = useState(true);
 
   // useEffect(() => {
-  //   fetch(`http://localhost:5000/users/${user?.email}`, {
+  //   fetch(`https://meditro.herokuapp.com/users/${user?.email}`, {
   //     method: "GET",
   //     headers: {
   //       authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -30,7 +30,7 @@ const AllUser = () => {
   }, [user]);
 
   const laodUsers = (user) => {
-    fetch(`http://localhost:5000/users/${user?.email}`, {
+    fetch(`https://meditro.herokuapp.com/users/${user?.email}`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -44,7 +44,7 @@ const AllUser = () => {
   };
 
   const removeUser = (email) => {
-    const url = `http://localhost:5000/user/${email}`;
+    const url = `https://meditro.herokuapp.com/user/${email}`;
     const isConfirm = window.confirm(
       `This will remove user and each appointment of this current user. Are you sure?`
     );

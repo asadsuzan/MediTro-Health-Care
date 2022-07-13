@@ -3,7 +3,7 @@ const { useState, useEffect } = require("react");
 const UseServices = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch("https://meditro.herokuapp.com/services")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
@@ -33,7 +33,7 @@ const UseFacilities = () => {
 };
 const UseService = (id) => {
   const [service, setService] = useState({});
-  const url = `http://localhost:5000/service/${id}`;
+  const url = `https://meditro.herokuapp.com/service/${id}`;
 
   useEffect(() => {
     fetch(url)
@@ -49,7 +49,7 @@ const UseToken = (user) => {
 
   useEffect(() => {
     const email = user?.user?.email;
-    const url = `http://localhost:5000/login/${email}`;
+    const url = `https://meditro.herokuapp.com/login/${email}`;
     const postData = async () => {
       if (email) {
         const userName = await user?.user?.displayName;
@@ -82,7 +82,7 @@ const UseAdmin = (user) => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    const url = `http://localhost:5000/isAdmin/${user?.email}`;
+    const url = `https://meditro.herokuapp.com/isAdmin/${user?.email}`;
 
     fetch(url, {
       method: "GET",

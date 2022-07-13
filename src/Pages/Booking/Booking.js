@@ -44,7 +44,7 @@ const Booking = () => {
       stage: "pending",
     };
     // console.log(bookingInfo);
-    fetch("http://localhost:5000/appointment", {
+    fetch("https://meditro.herokuapp.com/appointment", {
       method: "POST",
       headers: {
         "Content-type": "application/json; charset=UTF-8",
