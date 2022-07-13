@@ -3,8 +3,10 @@ import { MyButtonLg } from "../MyButtons/MyButtons";
 import { OverlayBg2, OverlayBg3, OverlayBg7 } from "../OverlayBg/OverlayBg";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import "./WorkProcess.css";
+import { useNavigate } from "react-router-dom";
 
 const WorkProcess = () => {
+  const navigate = useNavigate();
   return (
     <div className="WorkProcess position-relative">
       <div className="container">
@@ -23,6 +25,7 @@ const WorkProcess = () => {
               </p>
             </div>
             <MyButtonLg
+              action={() => navigate("/service")}
               style={{
                 background: "#e1e2f6",
                 color: "#565acf",
@@ -43,6 +46,7 @@ const WorkProcess = () => {
               </p>
             </div>
             <MyButtonLg
+              action={() => navigate("/service")}
               style={{
                 background: "#e1e2f6",
                 color: "#565acf",
@@ -63,6 +67,7 @@ const WorkProcess = () => {
               </p>
             </div>
             <MyButtonLg
+              action={() => navigate("/contact")}
               style={{
                 background: "#e1e2f6",
                 color: "#565acf",
