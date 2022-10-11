@@ -13,6 +13,7 @@ const Facilities = () => {
       <div className="container">
         <div className="row align-items-center gy-5">
           {/* left side */}
+
           <div className="col-xl-4 col-lg-4 col-md-12 col-12">
             <div>
               <SectionTitle>
@@ -28,6 +29,7 @@ const Facilities = () => {
               </figure>
             </div>
           </div>
+
           {/* right side */}
           <div className="col-xl-8 col-lg-8 col-md-12 col-12 ">
             <div className="facility-wrapper">
@@ -46,6 +48,7 @@ const Facilities = () => {
           </div>
         </div>
       </div>
+
       <OverlayBg1 style={{ bottom: "-10%", right: "0%" }} />
       <OverlayBg2 style={{ bottom: "-10%", left: "0%" }} />
       <OverlayBg6 style={{ top: "48%", left: "50%" }} />
