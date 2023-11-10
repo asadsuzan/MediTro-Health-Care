@@ -13,7 +13,7 @@ import {
 
 const Banner = ({ page }) => {
   const { pathname } = useLocation();
-  console.log(pathname.toUpperCase());
+
   return (
     <div className="banner position-relative">
       <div className="container text-center">

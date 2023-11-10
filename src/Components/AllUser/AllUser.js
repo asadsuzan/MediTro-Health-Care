@@ -30,7 +30,7 @@ const AllUser = () => {
   }, [user]);
 
   const laodUsers = (user) => {
-    fetch(`https://meditro.herokuapp.com/users/${user?.email}`, {
+    fetch(`https://meditro-server-production.up.railway.app/users/${user?.email}`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
